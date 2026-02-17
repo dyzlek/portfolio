@@ -3,8 +3,7 @@
 Bienvenue sur le dépôt de mon portfolio personnel.
 Je suis **Dylan Belledent**, étudiant en seconde année de BUT MMI (Métiers du Multimédia et de l’Internet). Ce portfolio illustre mon univers créatif et technique, mêlant développement web, design, motion design et 3D.
 
-👉 **[Voir le portfolio en ligne](https://dylan-belledent.fr)** *(Lien à mettre à jour si nécessaire)*
-
+👉 **[Voir le portfolio en ligne](https://dyzlek.github.io/portfolio/)**
 ## 🚀 À propos
 
 "Pas juste du code. De l'expérience."
