@@ -97,82 +97,36 @@
             <div class="about-container">
                 <div class="about-visual">
                     <div class="photo-frame tilt-hover" style="border: none; padding: 0;">
-                        <!-- Neural Network Visualization -->
-                        <div class="neural-network"
-                            style="width: 300px; height: 400px; background: #0a0a0a; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                            <!-- Nodes and Connections SVG -->
-                            <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <filter id="glow">
-                                        <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
-                                        <feMerge>
-                                            <feMergeNode in="coloredBlur" />
-                                            <feMergeNode in="SourceGraphic" />
-                                        </feMerge>
-                                    </filter>
-                                </defs>
-
-                                <!-- Random connections (Abstracted Neural Net) -->
-                                <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
-                                    <line x1="50" y1="50" x2="150" y2="100" />
-                                    <line x1="50" y1="50" x2="100" y2="200" />
-                                    <line x1="150" y1="100" x2="250" y2="50" />
-                                    <line x1="150" y1="100" x2="150" y2="200" />
-                                    <line x1="150" y1="100" x2="250" y2="150" />
-                                    <line x1="100" y1="200" x2="150" y2="200" />
-                                    <line x1="100" y1="200" x2="50" y2="300" />
-                                    <line x1="150" y1="200" x2="250" y2="150" />
-                                    <line x1="150" y1="200" x2="200" y2="300" />
-                                    <line x1="250" y1="50" x2="250" y2="150" />
-                                    <line x1="250" y1="150" x2="200" y2="300" />
-                                    <line x1="50" y1="300" x2="200" y2="300" />
-                                </g>
-
-                                <!-- Nodes -->
-                                <g fill="#fff" filter="url(#glow)">
-                                    <circle cx="50" cy="50" r="4" fill="var(--neon-primary)" />
-                                    <circle cx="150" cy="100" r="6" fill="#fff" />
-                                    <circle cx="250" cy="50" r="4" fill="var(--neon-secondary)" />
-
-                                    <circle cx="100" cy="200" r="5" fill="#fff" />
-                                    <circle cx="150" cy="200" r="5" fill="var(--neon-primary)" />
-                                    <circle cx="250" cy="150" r="4" fill="#fff" />
-
-                                    <circle cx="50" cy="300" r="4" fill="var(--neon-secondary)" />
-                                    <circle cx="200" cy="300" r="6" fill="#fff" />
-                                </g>
-
-                                <!-- Floating Particles for density -->
-                                <circle cx="120" cy="50" r="1" fill="rgba(255,255,255,0.5)" />
-                                <circle cx="180" cy="80" r="1" fill="rgba(255,255,255,0.5)" />
-                                <circle cx="280" cy="200" r="1" fill="rgba(255,255,255,0.5)" />
-                                <circle cx="20" cy="150" r="1" fill="rgba(255,255,255,0.5)" />
-                                <circle cx="220" cy="350" r="1" fill="rgba(255,255,255,0.5)" />
-
-                            </svg>
+                        <!-- Experience Animation -->
+                        <div class="experience-anim">
+                            <div class="cube-container">
+                                <div class="cube">
+                                    <div class="face front">EXP</div>
+                                    <div class="face back">DEV</div>
+                                    <div class="face right">WEB</div>
+                                    <div class="face left">UI</div>
+                                    <div class="face top"></div>
+                                    <div class="face bottom"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-text">
                     <h2 class="section-title">Pas juste du code.<br>De l'expérience.</h2>
                     <div class="bio-text">
-                        <p>Je m’appelle Dylan et je suis étudiant en BUT Métiers du Multimédia et de l’Internet. J’ai
-                            découvert le développement web en créant des sites pour mes propres projets, et j’ai
-                            rapidement apprécié le fait de pouvoir transformer une idée en un site réel, utilisable et
-                            concret.</p>
-                        <p class="highlight-p">Je travaille principalement avec HTML, CSS, JavaScript, ainsi que des
-                            frameworks comme
+                        <p>Je m’appelle Dylan et je suis étudiant en deuxième année de BUT Métiers du Multimédia et de
+                            l’Internet. J’ai découvert le développement web en créant mes propres sites, et j’ai tout de
+                            suite aimé pouvoir transformer une idée en quelque chose de concret et utilisable.</p>
+                        <p class="highlight-p">Je développe principalement avec HTML, CSS, JavaScript, ainsi que
                             Bootstrap et Tailwind CSS pour créer des interfaces modernes et responsives. J’ai aussi des
-                            bases en PHP, SQL, Node.js et Python, qui me permettent de mieux comprendre le
-                            fonctionnement global d’un projet web.</p>
-                        <p>En parallèle, je m’intéresse beaucoup à la création visuelle. J’utilise Figma pour le design
-                            UI/UX et la suite Adobe pour le motion design, l’animation 3D et le montage vidéo. Ces
-                            compétences me permettent de concevoir des projets complets, en combinant développement et
-                            création.</p>
-                        <p>J’aime imaginer, concevoir et construire des projets du début à la fin, en faisant attention
-                            à la fois à l’aspect technique et à l’expérience utilisateur. Mon objectif est de devenir
-                            développeur web et de participer à des projets créatifs où je pourrai continuer à apprendre,
-                            progresser et apporter ma propre vision.</p>
+                            bases en PHP, SQL, Node.js et Python, ce qui me permet d’avoir une vision globale d’un
+                            projet web.</p>
+                        <p>Je m’intéresse également beaucoup à la création visuelle, avec Figma pour l’UI/UX et la suite
+                            Adobe pour le motion design, l’animation et le montage vidéo. J’aime concevoir des projets
+                            complets, en combinant technique et créativité.</p>
+                        <p>Mon objectif est de devenir développeur web et de participer à des projets créatifs, où je
+                            pourrai continuer à apprendre, progresser et donner vie à mes idées.</p>
                     </div>
                 </div>
             </div>
@@ -538,6 +492,7 @@
                 <h2 class="footer-title">LET'S<br>WORK</h2>
                 <div class="footer-links">
                     <a href="mailto:dylanbelledent@gmail.com">dylanbelledent@gmail.com</a>
+                    <a href="tel:+33698136701">06 98 13 67 01</a>
                     <a href="https://www.linkedin.com/in/dylan-belledent-18b35b341/" target="_blank">LinkedIn</a>
                     <a href="https://github.com/dyzlek" target="_blank">GitHub</a>
                 </div>
