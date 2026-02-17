@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Festival - Aligot Cartoon | Dylan Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;700&display=swap"
@@ -15,6 +15,17 @@
 <body>
     <!-- Grain Overlay -->
     <div class="grain-overlay"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -27,6 +38,7 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="menu-btn">MENU</div>
     </header>
 
     <main>
@@ -130,14 +142,13 @@
                 </div>
             </div>
 
-            <div class="comparison-container"
-                style="display: flex; gap: 2rem; margin-top: 3rem; justify-content: center; flex-wrap: wrap;">
-                <div class="comparison-item" style="flex: 1; min-width: 300px; text-align: center;">
+            <div class="comparison-container">
+                <div class="comparison-item">
                     <h4 style="margin-bottom: 1rem; color: #666;">ANCIENNE AFFICHE</h4>
                     <img src="assets/7-aligot-saucisse.jpg.webp" alt="Ancienne Affiche" class="lightbox-trigger"
                         style="width: 100%; height: auto; border: 1px dashed #666; opacity: 0.8;">
                 </div>
-                <div class="comparison-item" style="flex: 1; min-width: 300px; text-align: center;">
+                <div class="comparison-item">
                     <h4 style="margin-bottom: 1rem; color: var(--neon-primary);">MA PROPOSITION</h4>
                     <img src="assets/affiche_page-0001.webp" class="lightbox-trigger"
                         style="width: 100%; height: auto; border: 1px solid var(--neon-primary);">

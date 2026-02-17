@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
 </head>
 
 <body>
@@ -18,6 +18,17 @@
 
     <!-- Grain Overlay for Texture -->
     <div class="grain-overlay"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <header>
         <a href="index.html" class="logo">D<span>.</span></a>
@@ -79,137 +90,9 @@
             </div>
         </section>
 
-        <!-- PROJECTS SECTION: Broken Grid / Masonry Feel -->
-        <section id="projects" class="projects link-trigger">
-            <div class="section-marker">01 // TRAVAUX</div>
-
-            <div class="projects-grid">
-                <!-- Project 1: Portrait / Featured -->
-                <article class="project-item project-portrait tilt-hover"
-                    onclick="window.location.href='project-food-festival.html'">
-                    <div class="project-img-wrapper">
-                        <!-- Use the new JPG for the thumbnail -->
-                        <div class="project-img"
-                            style="background-image: url('assets/affiche_page-0001.webp'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Flyer</span>
-                                <span class="project-tag">Affiche</span>
-                                <span class="project-tag">Identité</span>
-                            </div>
-                            <h3>Food Festival</h3>
-                            <p class="project-desc">Identité visuelle ludique et vectorielle pour un festival culinaire.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Motion Design -->
-                <article class="project-item project-medium offset-top tilt-hover"
-                    onclick="window.location.href='project-motion-design.html'">
-                    <div class="project-img-wrapper">
-                        <video class="project-img" autoplay muted loop playsinline style="object-fit: cover;">
-                            <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
-                        </video>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Motion Design</span>
-                                <span class="project-tag">Vidéo</span>
-                            </div>
-                            <h3>CV Vidéo & Motion</h3>
-                            <p class="project-desc">CV vidéo, showreels et expérimentations visuelles sur After Effects.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: WebAR Béziers -->
-                <article class="project-item project-centered-poster tilt-hover"
-                    onclick="window.location.href='project-ar-beziers.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/ar-poster.webp'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Réalité Augmentée</span>
-                                <span class="project-tag">Web 3D</span>
-                                <span class="project-tag">Affiche Interactive</span>
-                            </div>
-                            <h3>WebAR Béziers</h3>
-                            <p class="project-desc">Affiche interactive en Réalité Augmentée pour visualiser des
-                                données.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4: Marathon MMI -->
-                <article class="project-item project-wide tilt-hover"
-                    onclick="window.location.href='project-marathon.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/marathon/marathon-home.webp'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Site Internet</span>
-                                <span class="project-tag">WordPress</span>
-                                <span class="project-tag">Elementor</span>
-                            </div>
-                            <h3>Marathon MMI 2026</h3>
-                            <p class="project-desc">Création d'un site web complet en 4 jours (WordPress & Elementor).
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5: Smiley Solution (Marathon 2025) -->
-                <article class="project-item project-wide tilt-hover"
-                    onclick="window.location.href='project-smiley.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/smiley/smiley-home.webp'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Site Internet</span>
-                                <span class="project-tag">Print</span>
-                                <span class="project-tag">WordPress</span>
-                            </div>
-                            <h3>Smiley Solution</h3>
-                            <p class="project-desc">Marathon MMI 2025 (1ère année). Site WordPress et Carte de Visite.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-
-                <!-- Project 6: MoodTrackU -->
-                <article class="project-item project-wide tilt-hover"
-                    onclick="window.location.href='project-moodtracku.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/moodtracku/moodtracku-home.webp'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">UX/UI Design</span>
-                                <span class="project-tag">Figma</span>
-                                <span class="project-tag">Prototype</span>
-                            </div>
-                            <h3>MoodTrackU</h3>
-                            <p class="project-desc">Conception d'une application de suivi (Maquette & Prototype).</p>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
         <!-- ABOUT SECTION: Personal Story -->
         <section id="about" class="about selection-target">
-            <div class="section-marker">02 // PROFIL</div>
+            <div class="section-marker">01 // PROFIL</div>
 
             <div class="about-container">
                 <div class="about-visual">
@@ -273,19 +156,161 @@
                 <div class="about-text">
                     <h2 class="section-title">Pas juste du code.<br>De l'expérience.</h2>
                     <div class="bio-text">
-                        <p>Je suis <strong>Dylan</strong>, étudiant en BUT Métiers du Multimédia et de l’Internet. Je ne
-                            me contente pas de remplir des templates ; je conçois des univers.</p>
-
-                        <p class="highlight-p">J’ai commencé le développement en créant des sites pour mes projets
-                            personnels et j’aime voir une idée devenir un vrai site fonctionnel. Passionné par le
-                            développement web et la création multimédia, je possède des compétences en HTML, CSS,
-                            JavaScript, Bootstrap, ainsi qu’en motion design, animation et 3D.</p>
-
-                        <p>Curieux et créatif, j’aime concevoir des expériences interactives et visuelles complètes, en
-                            combinant technique et design. Mon objectif est de devenir développeur web et de participer
-                            à des projets innovants mêlant développement et création digitale.</p>
+                        <p>Je m’appelle Dylan et je suis étudiant en BUT Métiers du Multimédia et de l’Internet. J’ai
+                            découvert le développement web en créant des sites pour mes propres projets, et j’ai
+                            rapidement apprécié le fait de pouvoir transformer une idée en un site réel, utilisable et
+                            concret.</p>
+                        <p class="highlight-p">Je travaille principalement avec HTML, CSS, JavaScript, ainsi que des
+                            frameworks comme
+                            Bootstrap et Tailwind CSS pour créer des interfaces modernes et responsives. J’ai aussi des
+                            bases en PHP, SQL, Node.js et Python, qui me permettent de mieux comprendre le
+                            fonctionnement global d’un projet web.</p>
+                        <p>En parallèle, je m’intéresse beaucoup à la création visuelle. J’utilise Figma pour le design
+                            UI/UX et la suite Adobe pour le motion design, l’animation 3D et le montage vidéo. Ces
+                            compétences me permettent de concevoir des projets complets, en combinant développement et
+                            création.</p>
+                        <p>J’aime imaginer, concevoir et construire des projets du début à la fin, en faisant attention
+                            à la fois à l’aspect technique et à l’expérience utilisateur. Mon objectif est de devenir
+                            développeur web et de participer à des projets créatifs où je pourrai continuer à apprendre,
+                            progresser et apporter ma propre vision.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION: Broken Grid / Masonry Feel -->
+        <section id="projects" class="projects link-trigger">
+            <div class="section-marker">02 // TRAVAUX</div>
+
+            <!-- Filters -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="dev">Développement</button>
+                <button class="filter-btn" data-filter="infographie">Infographie</button>
+                <button class="filter-btn" data-filter="video">Vidéo</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Portrait / Featured -->
+                <article class="project-item project-portrait tilt-hover" data-category="infographie"
+                    onclick="window.location.href='project-food-festival.html'">
+                    <div class="project-img-wrapper">
+                        <!-- Use the new JPG for the thumbnail -->
+                        <div class="project-img"
+                            style="background-image: url('assets/affiche_page-0001.webp'); background-size: cover; background-position: center;">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-tags">
+                                <span class="project-tag">Flyer</span>
+                                <span class="project-tag">Affiche</span>
+                                <span class="project-tag">Identité</span>
+                            </div>
+                            <h3>Food Festival</h3>
+                            <p class="project-desc">Identité visuelle ludique et vectorielle pour un festival culinaire.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Motion Design -->
+                <article class="project-item project-medium offset-top tilt-hover" data-category="video"
+                    onclick="window.location.href='project-motion-design.html'">
+                    <div class="project-img-wrapper">
+                        <video class="project-img" autoplay muted loop playsinline style="object-fit: cover;">
+                            <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-overlay">
+                            <div class="project-tags">
+                                <span class="project-tag">Motion Design</span>
+                                <span class="project-tag">Vidéo</span>
+                            </div>
+                            <h3>CV Vidéo & Motion</h3>
+                            <p class="project-desc">CV vidéo, showreels et expérimentations visuelles sur After Effects.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: WebAR Béziers -->
+                <article class="project-item project-centered-poster tilt-hover" data-category="dev"
+                    onclick="window.location.href='project-ar-beziers.html'">
+                    <div class="project-img-wrapper">
+                        <div class="project-img"
+                            style="background-image: url('assets/ar-poster.webp'); background-size: cover; background-position: center;">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-tags">
+                                <span class="project-tag">Réalité Augmentée</span>
+                                <span class="project-tag">Web 3D</span>
+                                <span class="project-tag">Affiche Interactive</span>
+                            </div>
+                            <h3>WebAR Béziers</h3>
+                            <p class="project-desc">Affiche interactive en Réalité Augmentée pour visualiser des
+                                données.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Marathon MMI -->
+                <article class="project-item project-wide tilt-hover" data-category="dev"
+                    onclick="window.location.href='project-marathon.html'">
+                    <div class="project-img-wrapper">
+                        <div class="project-img"
+                            style="background-image: url('assets/marathon/marathon-home.webp'); background-size: cover; background-position: top center;">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-tags">
+                                <span class="project-tag">Site Internet</span>
+                                <span class="project-tag">WordPress</span>
+                                <span class="project-tag">Elementor</span>
+                            </div>
+                            <h3>Marathon MMI 2026</h3>
+                            <p class="project-desc">Création d'un site web complet en 4 jours (WordPress & Elementor).
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: Smiley Solution (Marathon 2025) -->
+                <article class="project-item project-wide tilt-hover" data-category="dev"
+                    onclick="window.location.href='project-smiley.html'">
+                    <div class="project-img-wrapper">
+                        <div class="project-img"
+                            style="background-image: url('assets/smiley/smiley-home.webp'); background-size: cover; background-position: top center;">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-tags">
+                                <span class="project-tag">Site Internet</span>
+                                <span class="project-tag">Print</span>
+                                <span class="project-tag">WordPress</span>
+                            </div>
+                            <h3>Smiley Solution</h3>
+                            <p class="project-desc">Marathon MMI 2025 (1ère année). Site WordPress et Carte de Visite.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Project 6: MoodTrackU -->
+                <article class="project-item project-wide tilt-hover" data-category="infographie"
+                    onclick="window.location.href='project-moodtracku.html'">
+                    <div class="project-img-wrapper">
+                        <div class="project-img"
+                            style="background-image: url('assets/moodtracku/moodtracku-home.webp'); background-size: cover; background-position: top center;">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-tags">
+                                <span class="project-tag">UX/UI Design</span>
+                                <span class="project-tag">Figma</span>
+                                <span class="project-tag">Prototype</span>
+                            </div>
+                            <h3>MoodTrackU</h3>
+                            <p class="project-desc">Conception d'une application de suivi (Maquette & Prototype).</p>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </section>
 

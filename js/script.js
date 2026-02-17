@@ -112,4 +112,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 5. Project Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+
+                if (filterValue === 'all' || filterValue === category) {
+                    item.style.display = 'block';
+                    // Trigger animation rerunning could be complex, 
+                    // allowing standard flow to handle it or forcing opacity
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                }
+            });
+        });
+    });
+
+    // 6. Mobile Menu Logic
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    if (menuBtn && mobileNavOverlay) {
+        menuBtn.addEventListener('click', () => {
+            mobileNavOverlay.classList.toggle('active');
+
+            // Optional: Change text from MENU to CLOSE
+            if (mobileNavOverlay.classList.contains('active')) {
+                menuBtn.textContent = 'CLOSE';
+                menuBtn.style.color = 'var(--text-primary)';
+            } else {
+                menuBtn.textContent = 'MENU';
+                menuBtn.style.color = 'inherit';
+            }
+        });
+
+        // Close menu when link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavOverlay.classList.remove('active');
+                menuBtn.textContent = 'MENU';
+            });
+        });
+    }
+
 });
