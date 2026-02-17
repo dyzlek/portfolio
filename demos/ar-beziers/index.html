@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>L'Apprentissage à Béziers - Expérience 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], roboto: ['Roboto', 'sans-serif'] },
+                    colors: { orange: { 500: '#FF6B00', 600: '#FF4500' }, yellow: { 400: '#FFC300' } }
+                }
+            }
+        }
+    </script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <!-- NOT Loading MindAR here -->
+    <script src="./js/components.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            background-color: #111;
+        }
+
+        /* Stylish Background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+            z-index: -1;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="overflow-hidden font-sans">
+    <div class="bg-gradient"></div>
+    <div class="grid-overlay"></div>
+
+    <div id="ui-layer" class="fixed inset-0 z-50 flex flex-col items-center justify-center pointer-events-none">
+        <div id="home-screen"
+            class="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center text-white pointer-events-auto transition-opacity duration-500">
+            <h1
+                class="text-4xl font-extrabold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400 uppercase tracking-widest">
+                L'Apprentissage<br>à Béziers</h1>
+            <p class="text-lg text-gray-300 mb-8 text-center max-w-[80%]">Découvrez le nouveau moteur de l'enseignement
+                supérieur en 3D.</p>
+            <button id="start-btn"
+                class="px-10 py-4 text-xl font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-full shadow-lg hover:scale-105 transition-transform active:scale-95 touch-manipulation">
+                COMMENCER
+            </button>
+            <a href="ar.html" class="mt-8 text-gray-500 hover:text-white underline text-sm">Basculer en mode AR
+                (Nécessite l'affiche)</a>
+        </div>
+    </div>
+
+    <!-- Standard A-Frame Scene (No MindAR) -->
+    <a-scene color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" hitbox-system>
+        <a-assets>
+            <img id="rocket-img" src="./assets/rocket.png" crossorigin="anonymous" />
+            <img id="img-titre" src="./assets/1/titre.png" crossorigin="anonymous" />
+            <img id="img-stitre" src="./assets/1/stitre.png" crossorigin="anonymous" />
+            <img id="img-fond" src="./assets/1/fond.png" crossorigin="anonymous" />
+            <img id="img-fond1" src="./assets/1/fond1.png" crossorigin="anonymous" />
+            <img id="img-chapeau" src="./assets/1/chapeau.png" crossorigin="anonymous" />
+            <img id="img-bp" src="./assets/1/bp.png" crossorigin="anonymous" />
+            <a-asset-item id="cap-model" src="./assets/low_poly_graduation_cap.glb"></a-asset-item>
+            <img id="img-fond2" src="./assets/2/fond.png" crossorigin="anonymous" />
+            <img id="img-fond2-1" src="./assets/2/fond1.png" crossorigin="anonymous" />
+            <img id="img-perso" src="./assets/2/perso.png" crossorigin="anonymous" />
+            <img id="img-titre2" src="./assets/2/titre.png" crossorigin="anonymous" />
+            <img id="img-bp2" src="./assets/2/bp.png" crossorigin="anonymous" />
+            <img id="img-cqf" src="./assets/2/cqf.png" crossorigin="anonymous" />
+            <img id="img-info2" src="./assets/2/info.png" crossorigin="anonymous" />
+            <img id="img-fond3" src="./assets/3/fond.png" crossorigin="anonymous" />
+            <img id="img-titre3" src="./assets/3/titre.png" crossorigin="anonymous" />
+            <img id="img-3-1" src="./assets/3/1.png" crossorigin="anonymous" />
+            <img id="img-3-2" src="./assets/3/2.png" crossorigin="anonymous" />
+            <img id="img-3-3" src="./assets/3/3.png" crossorigin="anonymous" />
+            <img id="img-3-4" src="./assets/3/4.png" crossorigin="anonymous" />
+            <img id="img-volume" src="./assets/3/volume.png" crossorigin="anonymous" />
+            <audio id="sound-3-1" src="./assets/3/1.mp3" preload="auto"></audio>
+            <audio id="sound-3-2" src="./assets/3/2.mp3" preload="auto"></audio>
+            <audio id="sound-3-3" src="./assets/3/3.mp3" preload="auto"></audio>
+            <audio id="sound-3-4" src="./assets/3/4.mp3" preload="auto"></audio>
+            <img id="img-fond4" src="./assets/4/fond.png" crossorigin="anonymous" />
+            <img id="img-fond4-1" src="./assets/4/fond1.png" crossorigin="anonymous" />
+            <img id="img-titre4" src="./assets/4/titre.png" crossorigin="anonymous" />
+            <img id="img-fois" src="./assets/4/fois.png" crossorigin="anonymous" />
+            <a-asset-item id="rocket-3d-model" src="./assets/retrofuturistic_toy_rocket.glb"></a-asset-item>
+            <img id="img-fond5" src="./assets/5/fond.png" crossorigin="anonymous" />
+            <img id="img-titre5" src="./assets/5/titre.png" crossorigin="anonymous" />
+            <img id="img-5-2" src="./assets/5/2.png" crossorigin="anonymous" />
+            <img id="img-5-3" src="./assets/5/3.png" crossorigin="anonymous" />
+            <img id="img-5-4" src="./assets/5/4.png" crossorigin="anonymous" />
+            <img id="img-5-5" src="./assets/5/5.png" crossorigin="anonymous" />
+            <a-asset-item id="cup-model" src="./assets/a_cool_little_cup_just_for_fun.glb"></a-asset-item>
+            <img id="img-6-1" src="./assets/6/1.png" crossorigin="anonymous" />
+            <img id="img-6-2" src="./assets/6/2.png" crossorigin="anonymous" />
+        </a-assets>
+
+        <!-- Fixed Camera for viewing -->
+        <a-camera position="0 0 1.2" look-controls="enabled: true" wasd-controls="enabled: false"
+            cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .clickable"></a-camera>
+
+        <!-- Lighting -->
+        <a-light type="ambient" color="#BBB"></a-light>
+        <a-light type="directional" position="1 1 1" intensity="0.5"></a-light>
+
+        <!-- Dummy MindAR Target to fool components -->
+        <a-entity mindar-image-target="targetIndex: 0" visible="true">
+            <!-- 
+                Using a wrapper entity to hold the content.
+                Positioned slightly closer to camera since we removed the AR transform.
+             -->
+            <a-entity id="ar-content-root" scale="0.8 0.8 0.8" position="0 -0.2 0">
+
+                <!-- Reuse the exact same content logic -->
+                <a-entity rocket-sequence>
+                    <a-entity scale="0.5 0.5 0.5" presentation-manager>
+
+                        <a-image id="rocket-entity" src="#rocket-img" position="0 0 0.1" scale="0.4 0.6 0.4"
+                            visible="false"
+                            animation__launch="property: position; to: 0 10 0.1; dur: 2000; easing: easeInQuad; startEvents: launch">
+                            <a-entity id="smoke-group" position="0 -0.5 0" visible="false">
+                                <a-sphere color="#DDDDDD" radius="0.2" opacity="0.8" position="0 0 0"
+                                    animation="property: position; to: 0 -2 0; dur: 1000; loop: true; easing: linear"
+                                    animation__scale="property: scale; from: 0.5 0.5 0.5; to: 2 2 2; dur: 1000; loop: true; easing: linear"
+                                    animation__fade="property: opacity; from: 0.8; to: 0; dur: 1000; loop: true; easing: linear"></a-sphere>
+                                <a-sphere color="#EEEEEE" radius="0.15" opacity="0.8" position="0.1 0 0"
+                                    animation="property: position; to: 0.2 -2 0; dur: 1200; delay: 300; loop: true; easing: linear"
+                                    animation__scale="property: scale; from: 0.5 0.5 0.5; to: 2.5 2.5 2.5; dur: 1200; delay: 300; loop: true; easing: linear"
+                                    animation__fade="property: opacity; from: 0.8; to: 0; dur: 1200; delay: 300; loop: true; easing: linear"></a-sphere>
+                                <a-sphere color="#CCCCCC" radius="0.18" opacity="0.8" position="-0.1 0 0"
+                                    animation="property: position; to: -0.2 -2 0; dur: 1100; delay: 600; loop: true; easing: linear"
+                                    animation__scale="property: scale; from: 0.5 0.5 0.5; to: 2.2 2.2 2.2; dur: 1100; delay: 600; loop: true; easing: linear"
+                                    animation__fade="property: opacity; from: 0.8; to: 0; dur: 1100; delay: 600; loop: true; easing: linear"></a-sphere>
+                            </a-entity>
+                        </a-image>
+
+                        <a-entity id="plan-travail" position="0 0 0.1" class="clickable" hitbox-target visible="false"
+                            geometry="primitive: plane; width: 1; height: 1.4"
+                            material="color: #3498db; opacity: 0.8; side: double">
+                            <a-text value="Plan de Travail\n(Click to Start)" align="center" color="white"
+                                width="2"></a-text>
+                        </a-entity>
+
+                        <a-entity id="pie-chart-container" position="0 0 0.2" visible="false" pie-chart></a-entity>
+
+                        <a-entity class="nav-arrow clickable" nav-arrow="action: next-step" position="0 -0.8 0.1"
+                            visible="false" geometry="primitive: triangle" material="color: #2ecc71; side: double"
+                            scale="0.2 0.2 0.2" rotation="0 0 180"></a-entity>
+                        <a-entity class="nav-arrow clickable" nav-arrow="action: next-graph" position="0.8 0 0.1"
+                            visible="false" geometry="primitive: triangle" material="color: #f1c40f; side: double"
+                            scale="0.2 0.2 0.2" rotation="0 0 -90"></a-entity>
+                        <a-entity class="nav-arrow clickable" nav-arrow="action: prev-graph" position="-0.8 0 0.1"
+                            visible="false" geometry="primitive: triangle" material="color: #f1c40f; side: double"
+                            scale="0.2 0.2 0.2" rotation="0 0 90"></a-entity>
+
+                        <a-entity id="main-content" visible="false" scale="0.8 0.8 0.8" falling-caps="count: 3">
+                            <a-image src="#img-fond" position="0 0 0.1" scale="4 2.4 1" opacity="0" alpha-test="0.5"
+                                class="clickable" click-feedback
+                                animation="property: scale; from: 0 0 0; to: 4 2.3 1; dur: 1200; delay: 400; easing: easeOutElastic; elasticity: 600; startEvents: startReveal"
+                                animation__fade="property: opacity; from: 0; to: 1; dur: 800; delay: 400; easing: easeOutQuad; startEvents: startReveal"></a-image>
+                            <a-image src="#img-fond1" position="0 0 0.2" scale="4 2.4 1" opacity="0" alpha-test="0.5"
+                                class="clickable" click-feedback
+                                animation="property: scale; from: 0 0 0; to: 4 2.3 1; dur: 1200; delay: 500; easing: easeOutElastic; elasticity: 600; startEvents: startReveal"
+                                animation__fade="property: opacity; from: 0; to: 1; dur: 800; delay: 500; easing: easeOutQuad; startEvents: startReveal"></a-image>
+                            <a-image src="#img-titre" position="0 0.7 0.4" scale="3 0.65 0.65" opacity="0"
+                                alpha-test="0.5" class="clickable" click-feedback
+                                animation="property: scale; from: 0 0 0; to: 3 0.65 0.65; dur: 1200; easing: easeOutElastic; elasticity: 800; startEvents: startReveal"
+                                animation__fade="property: opacity; from: 0; to: 1; dur: 800; easing: easeOutQuad; startEvents: startReveal"></a-image>
+                            <a-image src="#img-stitre" position="0 0.28 0.3" scale="2 0.25 0.25" opacity="0"
+                                alpha-test="0.5" class="clickable" click-feedback
+                                animation="property: scale; from: 0 0 0; to: 2 0.25 0.25; dur: 1200; delay: 200; easing: easeOutElastic; elasticity: 700; startEvents: startReveal"
+                                animation__fade="property: opacity; from: 0; to: 1; dur: 800; delay: 200; easing: easeOutQuad; startEvents: startReveal"></a-image>
+                            <a-image src="#img-chapeau" position="0 -0.32 0.25" scale="0.8 0.8 0.55" opacity="0"
+                                class="clickable" click-feedback alpha-test="0.5"
+                                animation="property: scale; from: 0 0 0; to: 0.9 0.9 0.6; dur: 1200; delay: 600; easing: easeOutElastic; elasticity: 800; startEvents: startReveal"
+                                animation__fade="property: opacity; from: 0; to: 1; dur: 800; delay: 600; easing: easeOutQuad; startEvents: startReveal"
+                                animation__float="property: position; to: 0 -0.15 0.3; dir: alternate; dur: 2000; loop: true; easing: easeInOutSine; startEvents: startReveal"></a-image>
+                            <a-entity id="bp-group" position="0 -0.85 0.6" scale="1 0.4 0.4"
+                                animation="property: scale; from: 0 0 0; to: 1 0.4 0.4; dur: 1200; delay: 800; easing: easeOutElastic; elasticity: 600; startEvents: startReveal">
+                                <a-image id="bp-image" src="#img-bp" position="0 0 0" width="1" height="1" opacity="0"
+                                    alpha-test="0.5" class="clickable"
+                                    hitbox-target="useRectangle: true; minOpacity: 0.5" dismiss-on-click
+                                    animation__fade="property: opacity; from: 0; to: 1; dur: 800; delay: 800; easing: easeOutQuad; startEvents: startReveal"></a-image>
+                            </a-entity>
+                        </a-entity>
+
+                        <a-entity id="scene2-content" visible="false" scale="0.8 0.8 0.8" scene2-animation>
+                            <a-image id="scene2-fond" src="#img-fond2" position="0 0 -0.6" scale="0.2 0.2 0.2"
+                                opacity="0" alpha-test="0.5"></a-image>
+                            <a-image id="scene2-fond1" src="#img-fond2-1" position="0 0 -0.5" scale="0.2 0.2 0.2"
+                                opacity="0" alpha-test="0.5"></a-image>
+                            <a-image id="perso-1" src="#img-perso" class="perso" position="-0.9 -0.2 0.25"
+                                scale="0.4 0.7 0.4" opacity="0" alpha-test="0.5"></a-image>
+                            <a-image id="perso-2" src="#img-perso" class="perso" position="-0.3 -0.2 0.25"
+                                scale="0.4 0.7 0.4" opacity="0" alpha-test="0.5"></a-image>
+                            <a-image id="perso-3" src="#img-perso" class="perso" position="0.3 -0.2 0.25"
+                                scale="0.4 0.7 0.4" opacity="0" alpha-test="0.5"></a-image>
+                            <a-image id="perso-4" src="#img-perso" class="perso" position="0.9 -0.2 0.25"
+                                scale="0.4 0.7 0.4" opacity="0" alpha-test="0.5"></a-image>
+                            <a-image id="scene2-titre" src="#img-titre2" position="0 0.7 0.4" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-entity id="bp2-group" position="0 -0.85 0.6" scale="0 0 0">
+                                <a-image id="scene2-bp" src="#img-bp2" position="0 0 0" width="1" height="1" opacity="0"
+                                    alpha-test="0.5" class="clickable"
+                                    hitbox-target="useRectangle: true; minOpacity: 0.5" scene2-bp-click></a-image>
+                            </a-entity>
+                            <a-image id="scene2-cqf" src="#img-cqf" position="0 -0.1 0.35" scale="0 0 0" opacity="0"
+                                alpha-test="0.5" visible="false"></a-image>
+                            <a-image id="scene2-info" src="#img-info2" position="0 0.1 0.15" scale="0 0 0" opacity="0"
+                                alpha-test="0.5" visible="false"></a-image>
+                            <a-entity id="bp3-group" position="0 -0.85 0.65" scale="0 0 0" visible="false">
+                                <a-image id="scene2-bp-final" src="#img-bp2" position="0 0 0" width="1" height="1"
+                                    opacity="0" alpha-test="0.5" class="clickable"
+                                    hitbox-target="useRectangle: true; minOpacity: 0.5" scene3-trigger></a-image>
+                            </a-entity>
+                        </a-entity>
+
+                        <!-- SCENE 3 -->
+                        <a-entity id="scene3-content" visible="false" scale="0.8 0.8 0.8" scene3-animation>
+                            <a-image id="scene3-fond" src="#img-fond3" position="0 0 -0.6" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-image id="scene3-titre" src="#img-titre3" position="0 0.85 0.2" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-image id="scene3-img1" src="#img-3-1" position="-0.8 0.2 0.1" scale="0 0 0" opacity="0"
+                                alpha-test="0.5" class="clickable" hitbox-target="useRectangle: true"
+                                play-sound-on-click="sound: #sound-3-1"></a-image>
+                            <a-image id="scene3-img2" src="#img-3-2" position="0.8 0.2 0.1" scale="0 0 0" opacity="0"
+                                alpha-test="0.5" class="clickable" hitbox-target="useRectangle: true"
+                                play-sound-on-click="sound: #sound-3-2"></a-image>
+                            <a-image id="scene3-img3" src="#img-3-3" position="-0.8 -0.55 0.1" scale="0 0 0" opacity="0"
+                                alpha-test="0.5" class="clickable" hitbox-target="useRectangle: true"
+                                play-sound-on-click="sound: #sound-3-3"></a-image>
+                            <a-image id="scene3-img4" src="#img-3-4" position="0.8 -0.55 0.1" scale="0 0 0" opacity="0"
+                                alpha-test="0.5" class="clickable" hitbox-target="useRectangle: true"
+                                play-sound-on-click="sound: #sound-3-4"></a-image>
+                            <a-entity id="bp4-group" position="0 -0.95 0.3" scale="0 0 0" visible="false">
+                                <a-image id="scene3-bp" src="#img-bp2" position="0 0 0" width="1" height="1" opacity="0"
+                                    alpha-test="0.5" class="clickable" hitbox-target="useRectangle: true"
+                                    scene4-trigger></a-image>
+                            </a-entity>
+                            <a-image id="scene3-volume" src="#img-volume" position="-1.1 -1.05 0.2" scale="0 0 0"
+                                opacity="0" alpha-test="0.5"></a-image>
+                        </a-entity>
+
+                        <!-- SCENE 4 -->
+                        <a-entity id="scene4-content" visible="false" scale="0.8 0.8 0.8" scene4-animation>
+                            <a-image id="scene4-fond" src="#img-fond4" position="0 0 -0.6" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-image id="scene4-fond1" src="#img-fond4-1" position="0 0 -0.5" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-image id="scene4-titre" src="#img-titre4" position="0 0.85 0.2" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-image id="scene4-fois" src="#img-fois" position="-1.2 0.35 0.15" scale="0 0 0"
+                                opacity="0" alpha-test="0.5"></a-image>
+
+                            <a-entity id="scene4-graph-container" position="0 -0.1 0.3">
+                                <a-entity id="scene4-arrow1" position="-0.4 -0.4 0" visible="false">
+                                    <a-box color="#FF6B00" width="0.05" height="0.07" depth="0.02"
+                                        position="0 0.035 0"></a-box>
+                                    <a-cone color="#FF6B00" radius-bottom="0.06" radius-top="0" height="0.06"
+                                        position="0 0.1 0"></a-cone>
+                                    <a-text value="78" align="center" color="#FF6B00" font="roboto" width="3.5"
+                                        position="0 -0.12 0"></a-text>
+                                    <a-text value="APPRENTIS" align="center" color="#FF6B00" font="roboto" width="2"
+                                        position="0 -0.28 0"></a-text>
+                                    <a-text value="2015" align="center" color="#FF6B00" font="roboto" width="2.2"
+                                        position="0 -0.44 0"></a-text>
+                                </a-entity>
+
+                                <a-entity id="scene4-arrow2" position="0.4 -0.4 0" visible="false">
+                                    <a-box id="scene4-arrow2-bar" color="#FFD700" width="0.06" height="0.1" depth="0.02"
+                                        position="0 0.05 0"></a-box>
+                                    <a-cone id="scene4-arrow2-tip" color="#FFD700" radius-bottom="0.1" radius-top="0"
+                                        height="0.12" position="0 0.16 0"></a-cone>
+                                </a-entity>
+
+                                <a-text id="scene4-counter" value="0" align="center" color="#FFD700" font="roboto"
+                                    width="3.5" position="0.4 -0.55 0.1" visible="false"></a-text>
+                                <a-text id="scene4-label2" value="APPRENTIS" align="center" color="#FFD700"
+                                    font="roboto" width="2" position="0.4 -0.72 0.1" visible="false"></a-text>
+                                <a-text id="scene4-year2" value="2025" align="center" color="#FFD700" font="roboto"
+                                    width="2.2" position="0.4 -0.88 0.1" visible="false"></a-text>
+
+                                <a-entity id="scene4-explosion" position="0.4 0 0" visible="false"></a-entity>
+                            </a-entity>
+
+                            <a-entity id="scene4-rocket-3d" gltf-model="#rocket-3d-model" position="1.0 0 0.5"
+                                scale="0 0 0" rotation="0 -30 15" visible="false"></a-entity>
+                            <a-entity id="scene4-rocket-particles" position="1.0 -0.2 0.5" visible="false"></a-entity>
+
+                            <a-entity id="bp5-group" position="1.3 -0.7 0.65" scale="0 0 0" visible="false">
+                                <a-image id="scene4-bp" src="#img-bp2" position="0 0 0" width="1" height="1" opacity="0"
+                                    alpha-test="0.5" class="clickable"
+                                    hitbox-target="useRectangle: true; minOpacity: 0.5" scene5-trigger></a-image>
+                            </a-entity>
+                        </a-entity>
+
+                        <!-- SCENE 5 - Podium avec trophées plus bas -->
+                        <a-entity id="scene5-content" visible="false" scale="0.8 0.8 0.8" scene5-animation>
+                            <a-image id="scene5-fond" src="#img-fond5" position="0 0 -0.6" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+                            <a-image id="scene5-titre" src="#img-titre5" position="0 0.85 0.2" scale="0 0 0" opacity="0"
+                                alpha-test="0.5"></a-image>
+
+                            <a-entity id="scene5-flip-container" position="0 -0.15 0.3">
+                                <a-image id="scene5-card-front" src="#img-5-2" position="0 0 0.01" scale="0 0 0"
+                                    opacity="0" alpha-test="0.5"></a-image>
+                                <a-image id="scene5-card-back1" src="#img-5-3" position="0 0 0.01" scale="0 0 0"
+                                    opacity="0" alpha-test="0.5"></a-image>
+                                <a-image id="scene5-card-back2" src="#img-5-4" position="0 0 0.01" scale="0 0 0"
+                                    opacity="0" alpha-test="0.5"></a-image>
+                                <a-image id="scene5-card-back3" src="#img-5-5" position="0 0 0.01" scale="0 0 0"
+                                    opacity="0" alpha-test="0.5"></a-image>
+                            </a-entity>
+
+                            <!-- Trophées plus bas (Y = -0.8) -->
+                            <a-entity id="scene5-cup-left" gltf-model="#cup-model" position="-1.2 -0.8 0.8"
+                                scale="0 0 0" rotation="0 0 0" visible="false"></a-entity>
+                            <a-entity id="scene5-cup-right" gltf-model="#cup-model" position="1.2 -0.8 0.8"
+                                scale="0 0 0" rotation="0 0 0" visible="false"></a-entity>
+
+                            <a-entity id="bp6-group" position="0 -0.95 0.65" scale="0 0 0" visible="false">
+                                <a-image id="scene5-bp" src="#img-bp2" position="0 0 0" width="1" height="1" opacity="0"
+                                    alpha-test="0.5" class="clickable"
+                                    hitbox-target="useRectangle: true; minOpacity: 0.5" scene6-trigger></a-image>
+                            </a-entity>
+                        </a-entity>
+
+                        <!-- SCENE 6 - Finale avec 2 images pivotées et bouton reset -->
+                        <a-entity id="scene6-content" visible="false" scale="0.8 0.8 0.8" scene6-animation>
+                            <!-- Image 1 à gauche - pivotée vers l'utilisateur -->
+                            <a-image id="scene6-img1" src="#img-6-1" position="-1.1 0 0.4" rotation="0 25 0"
+                                scale="0 0 0" opacity="0" alpha-test="0.5"></a-image>
+
+                            <!-- Image 2 à droite - pivotée vers l'utilisateur -->
+                            <a-image id="scene6-img2" src="#img-6-2" position="1.1 0 0.4" rotation="0 -25 0"
+                                scale="0 0 0" opacity="0" alpha-test="0.5"></a-image>
+
+
+                        </a-entity>
+
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+    <script>
+        const homeScreen = document.querySelector('#home-screen');
+        const startBtn = document.querySelector('#start-btn');
+        const targetEntity = document.querySelector('[mindar-image-target]');
+
+        startBtn.addEventListener('click', () => {
+            homeScreen.classList.add('opacity-0', 'pointer-events-none');
+            // Fake the targetFound event to trigger the sequence
+            console.log("Starting Non-AR Experience...");
+            setTimeout(() => {
+                targetEntity.emit('targetFound');
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

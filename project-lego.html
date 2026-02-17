@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO Manager - SAE 203 | Dylan Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">DYLAN<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="hero project-hero">
+            <!-- Immersive Background (Placeholder) -->
+            <div class="project-hero-bg" style="background: #2c3e50; filter: blur(4px) brightness(0.4);">
+            </div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    LEGO <br>
+                    <span class="line-2">MANAGER</span>
+                </h1>
+                <p class="hero-sub">DÉVELOPPEMENT WEB : Site dynamique de gestion de collection (PHP/SQL).</p>
+                <div class="hero-cta-group">
+                    <a href="../SAE203/index.php" target="_blank" class="btn-primary magnetic-btn">
+                        Visiter le Site
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb-1" style="background: radial-gradient(circle, #F2C94C 0%, transparent 70%);"></div>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAILS -->
+        <section class="project-details">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">LE PROJET</h2>
+                    <div class="bio-text">
+                        <p>
+                            <strong>LEGO Manager</strong> est un projet réalisé dans le cadre de la SAE 203. L'objectif
+                            était de développer un site web dynamique permettant aux utilisateurs de gérer leur propre
+                            collection de sets LEGO.
+                        </p>
+                        <p class="highlight-p">Base de données. Espace Membre. Interactivité.</p>
+                        <p>
+                            Le site a été entièrement développé en PHP natif sans framework, avec une base de données
+                            SQLite. Il intègre de nombreuses fonctionnalités comme l'import de données CSV, un système
+                            de commentaires, une wishlist et un chat en temps réel.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">FONCTIONNALITÉS</h2>
+                    <ul class="skill-list">
+                        <li><strong>Collection :</strong> Ajout/Retrait de sets, Wishlist personnelle.</li>
+                        <li><strong>Communauté :</strong> Commentaires, notes et Chat membres.</li>
+                        <li><strong>Back-office :</strong> Import CSV, gestion des utilisateurs (Admin).</li>
+                        <li><strong>Sécurité :</strong> Hashage des mots de passe, validation email.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT GALLERY -->
+        <section class="project-gallery">
+            <h2 class="section-title">APERÇU DES FONCTIONNALITÉS</h2>
+
+            <!-- Horizontal Scroll Container -->
+            <div class="gallery-scroll-container">
+
+                <!-- Placeholder Items - TO BE REPLACED WITH SCREENSHOTS -->
+                <div class="gallery-scroll-item">
+                    <div class="image-container tilt-hover lightbox-trigger"
+                        style="background: #333; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+                        <span style="color: #fff; font-family: var(--font-body);">Capture: Accueil</span>
+                    </div>
+                </div>
+
+                <div class="gallery-scroll-item">
+                    <div class="image-container tilt-hover lightbox-trigger"
+                        style="background: #333; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+                        <span style="color: #fff; font-family: var(--font-body);">Capture: Liste des Sets</span>
+                    </div>
+                </div>
+
+                <div class="gallery-scroll-item">
+                    <div class="image-container tilt-hover lightbox-trigger"
+                        style="background: #333; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+                        <span style="color: #fff; font-family: var(--font-body);">Capture: Profil Utilisateur</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">LET'S<br>WORK</h2>
+            <div class="footer-links">
+                <a href="mailto:contact@dylan.com">contact@dylan.com</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Dylan. Tous droits réservés.</span>
+            <span>Portfolio v1.0</span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

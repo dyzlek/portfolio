@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Design - CV Vidéo & Projets | Dylan Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">DYLAN<span>.</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="hero project-hero">
+            <!-- Immersive Background - Using a video or abstract bg -->
+            <div class="project-hero-bg"
+                style="background: radial-gradient(circle at center, #2b1055 0%, #000000 100%);"></div>
+
+            <!-- Optional: Video Background for Hero -->
+            <video class="project-hero-bg" autoplay muted loop playsinline
+                style="object-fit: cover; opacity: 0.3; mix-blend-mode: screen;">
+                <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    MOTION <br>
+                    <span class="line-2">DESIGN</span>
+                </h1>
+                <p class="hero-sub">CV Vidéo, Showreels et Expérimentations Visuelles.</p>
+                <div class="hero-cta-group">
+                    <a href="#cv-video" class="btn-primary magnetic-btn">Voir le CV Vidéo</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb-1" style="background: radial-gradient(circle, #4361EE 0%, transparent 70%);"></div>
+            </div>
+        </section>
+
+        <!-- PROJECT SUMMARY -->
+        <section class="project-details">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">LE CONCEPT</h2>
+                    <div class="bio-text">
+                        <p>
+                            Le Motion Design est pour moi un moyen puissant de raconter des histoires et de capter
+                            l'attention.
+                            Cette page regroupe plusieurs projets clés : de mon <strong>CV Vidéo</strong> conçu pour
+                            promouvoir mon profil en alternance,
+                            à des exercices techniques réalisés sous contrainte de temps, en passant par des créations
+                            artistiques plus libres.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">OUTILS CRÉATIFS</h2>
+                    <ul class="skill-list">
+                        <li><strong>After Effects :</strong> Animation 2D, Compositing, Effets visuels.</li>
+                        <li><strong>Premiere Pro / DaVinci :</strong> Montage, Colorimétrie, Sound Design.</li>
+                        <li><strong>Blender :</strong> Intégration 3D dans le flux de production vidéo.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEOS GALLERY -->
+        <!-- VIDEOS GALLERY -->
+        <section class="project-gallery">
+            <h2 class="section-title">RÉALISATIONS</h2>
+
+            <!-- 1. GÉNÉRIQUE DE FILM -->
+            <div id="film-video" class="gallery-item project-wide">
+                <div class="gallery-text">
+                    <h3>GÉNÉRIQUE DE FILM</h3>
+                    <p>
+                        <strong>Outils :</strong> After Effects + Blender.<br>
+                        Création d'un générique complet avec un travail approfondi sur les transitions et l'atmosphère.
+                        L'utilisation de Blender a permis d'ajouter de la profondeur et des éléments 3D à la
+                        composition.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <video controls width="100%" style="border-radius: 4px;">
+                        <source src="assets/motion-design/film-credits.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+            </div>
+
+            <!-- 2. EXERCICE VOX -->
+            <div class="gallery-item offset-top">
+                <div class="gallery-text">
+                    <h3>EXERCICE "VOX"</h3>
+                    <p>
+                        Application des acquis de cours sur After Effects. Un projet axé sur l'animation de texte
+                        (Kinetic Typography) et la synchronisation audio-visuelle précise.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <video controls width="100%" style="border-radius: 4px;">
+                        <source src="assets/motion-design/vox-exercise.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+            </div>
+
+            <!-- 3. CV VIDÉO -->
+            <div id="cv-video" class="gallery-item">
+                <div class="gallery-text">
+                    <h3>CV VIDÉO</h3>
+                    <p>
+                        <strong>Objectif :</strong> "Se vendre en vidéo".<br>
+                        Mon manifeste créatif pour l'alternance. Sortir du format papier pour montrer mes compétences en
+                        action : rythme, transitions fluides et message clair.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <video controls width="100%" poster="" style="border-radius: 4px;">
+                        <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+            </div>
+
+            <!-- 4. AUTRES PROJETS (Grid) -->
+            <div class="projects-grid" style="grid-template-columns: 1fr 1fr; margin-top: 4rem;">
+
+                <!-- PROMOTION ALTERNANCE -->
+                <div class="gallery-item" style="grid-column: span 1;">
+                    <div class="gallery-text">
+                        <h3>PROMOTION ALTERNANCE</h3>
+                        <p>
+                            <strong>Contexte :</strong> Promotion Alternance.<br>
+                            Un petit projet vidéo conçu spécifiquement pour faire la promotion de l'alternance.
+                        </p>
+                    </div>
+                    <div class="image-container tilt-hover lightbox-trigger">
+                        <video controls width="100%" style="border-radius: 4px;">
+                            <source src="assets/motion-design/alternance-promo.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la vidéo.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- REPRODUCTION B2 -->
+                <div class="gallery-item" style="grid-column: span 1;">
+                    <div class="gallery-text">
+                        <h3>CHALLENGE 1 HEURE (B2)</h3>
+                        <p>
+                            <strong>Défi :</strong> Reproduction technique.<br>
+                            Exercice intensif réalisé en 1h pour valider la compréhension des mécanismes d'animation.
+                            Rapidité et précision.
+                        </p>
+                    </div>
+                    <div class="image-container tilt-hover lightbox-trigger">
+                        <video controls width="100%" style="border-radius: 4px;">
+                            <source src="assets/motion-design/repro-b2.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la vidéo.
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">LET'S<br>WORK</h2>
+            <div class="footer-links">
+                <a href="mailto:contact@dylan.com">contact@dylan.com</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Dylan. Tous droits réservés.</span>
+            <span>Portfolio v1.0</span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
