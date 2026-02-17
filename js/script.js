@@ -112,10 +112,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Project Filtering Logic
+    // 5. Project Filtering & Load More Logic
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const ITEMS_TO_SHOW = 3;
+    let isExpanded = false;
 
+    // Helper: Update visibility based on categories and expansion
+    const updateProjectsVisibility = (filterValue) => {
+        let visibleCount = 0;
+
+        projectItems.forEach((item, index) => {
+            const category = item.getAttribute('data-category');
+            const matches = filterValue === 'all' || filterValue === category;
+
+            if (matches) {
+                // Determine if item should be shown
+                // Show if:
+                // 1. Filter is NOT 'all' (User wants to see specific category -> show all matches)
+                // 2. We are expanded (User clicked 'Load More')
+                // 3. We are within the limit (first 3 items)
+                if (filterValue !== 'all' || isExpanded || visibleCount < ITEMS_TO_SHOW) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.display = 'none';
+                }
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Toggle Load More Button
+        // Show only if: Filter is 'all', NOT expanded, and there are more items to show
+        if (filterValue === 'all' && !isExpanded && visibleCount > ITEMS_TO_SHOW) {
+            if (loadMoreBtn) loadMoreBtn.style.display = 'inline-block';
+        } else {
+            if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+        }
+    };
+
+    // Initialize with default view (first 3)
+    updateProjectsVisibility('all');
+
+    // Load More Click Handler
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            isExpanded = true;
+            updateProjectsVisibility('all');
+        });
+    }
+
+    // Filter Click Handlers
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // Remove active class from all buttons
@@ -125,23 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const filterValue = btn.getAttribute('data-filter');
 
-            projectItems.forEach(item => {
-                const category = item.getAttribute('data-category');
+            // Reset expansion when filtering? 
+            // User requirement: "Si on utilise les filtres... affiche tous les résultats".
+            // So we don't need to reset isExpanded, but the logic handles showing all anyway.
+            // If we go back to 'all', do we stay expanded? 
+            // Let's reset isExpanded to false when clicking 'all' to re-enable the button?
+            // Or keep it expanded if user already clicked it?
+            // Decision: If user clicks 'All' again, let's reset to limited view to give them control back.
+            if (filterValue === 'all') {
+                isExpanded = false;
+            }
 
-                if (filterValue === 'all' || filterValue === category) {
-                    item.style.display = 'block';
-                    // Trigger animation rerunning could be complex, 
-                    // allowing standard flow to handle it or forcing opacity
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    item.style.display = 'none';
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                }
-            });
+            updateProjectsVisibility(filterValue);
         });
     });
 

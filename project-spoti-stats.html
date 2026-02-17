@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoti-Stats - Dashboard Musical | Dylan Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+</head>
+
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">D<span>.</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-btn">MENU</div>
+    </header>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="hero project-hero">
+            <!-- Immersive Background -->
+            <div class="project-hero-bg" style="background-image: url('assets/spoti-stats/dashboard.png');"></div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    SPOTI <br>
+                    <span class="line-2">STATS</span>
+                </h1>
+                <p class="hero-sub">Exploration de données musicales via l'API Spotify.</p>
+                <!-- Add link if available, otherwise just visual -->
+                <div class="hero-cta-group">
+                    <a href="demos/spoti-stats/index.html" target="_blank" class="btn-primary magnetic-btn">Voir le
+                        Site</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb-1" style="background: radial-gradient(circle, #1DB954 0%, transparent 70%);"></div>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAILS -->
+        <section class="project-details">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">LE PROJET</h2>
+                    <div class="bio-text">
+                        <p>
+                            Spoti-Stats est un dashboard interactif permettant aux utilisateurs de visualiser leurs
+                            habitudes d'écoute Spotify.
+                            Le projet utilise l'API Web de Spotify pour récupérer des données en temps réel telles que
+                            les artistes les plus écoutés,
+                            les titres préférés et les genres dominants. Use OAuth 2.0 pour une authentification
+                            sécurisée.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">TECH STACK</h2>
+                    <ul class="skill-list">
+                        <li><strong>Frontend :</strong> HTML5, CSS3, JavaScript (ES6+).</li>
+                        <li><strong>Data Viz :</strong> Chart.js (ou équivalent custom).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT GALLERY -->
+        <section class="project-gallery">
+            <h2 class="section-title">INTERFACE</h2>
+
+            <!-- Dashboard Item -->
+            <div class="gallery-item project-wide">
+                <div class="gallery-text">
+                    <h3>TABLEAU DE BORD</h3>
+                    <p>
+                        Une vue d'ensemble claire et esthétique des statistiques clés. Le design sombre (Dark Mode)
+                        reprend les codes visuels de Spotify tout en y ajoutant une touche personnelle avec des
+                        gradients néons.
+                    </p>
+                </div>
+                <!-- Dashboard Image -->
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/spoti-stats/dashboard.png" alt="Dashboard Spoti-Stats">
+                </div>
+            </div>
+
+            <!-- Home/Login Item -->
+            <div class="gallery-item offset-top">
+                <div class="gallery-text">
+                    <h3>ACCUEIL & CONNEXION</h3>
+                    <p>
+                        Page d'atterrissage incitant l'utilisateur à se connecter via son compte Spotify.
+                        L'expérience est fluide et sécurisée grâce au protocole d'autorisation standard.
+                    </p>
+                </div>
+                <!-- Home Image -->
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/spoti-stats/home.png" alt="Page d'accueil Spoti-Stats">
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">LET'S<br>WORK</h2>
+            <div class="footer-links">
+                <a href="mailto:dylanbelledent@gmail.com">dylanbelledent@gmail.com</a>
+                <a href="https://www.linkedin.com/in/dylan-belledent-18b35b341/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/dyzlek" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dylan Belledent.</span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

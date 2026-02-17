@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Adventure - Jeu Vidéo Phaser | Dylan Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+</head>
+
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">D<span>.</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-btn">MENU</div>
+    </header>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="hero project-hero">
+            <!-- Immersive Background -->
+            <div class="project-hero-bg" style="background-image: url('assets/summer-adventure/gameplay-1.png');"></div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    SUMMER <br>
+                    <span class="line-2">ADVENTURE</span>
+                </h1>
+                <p class="hero-sub">Un jeu de plateforme à deux joueurs développé avec Phaser JS.</p>
+                <div class="hero-cta-group">
+                    <a href="demos/summer-adventure/index.html" target="_blank" class="btn-primary magnetic-btn">Jouer
+                        au Jeu</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb-1" style="background: radial-gradient(circle, #FCA311 0%, transparent 70%);"></div>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAILS -->
+        <section class="project-details">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">LE CONCEPT</h2>
+                    <div class="bio-text">
+                        <p>
+                            Summer Adventure est un projet réalisé dans le but d'apprendre à utiliser le framework
+                            <strong>Phaser</strong>
+                            et d'approfondir mes connaissances en <strong>JavaScript</strong>.
+                            L'objectif était de créer un jeu vidéo complet, jouable à deux, avec des mécaniques de
+                            plateforme et de collaboration.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">COMPÉTENCES</h2>
+                    <ul class="skill-list">
+                        <li><strong>Phaser 3 :</strong> Moteur de jeu 2D HTML5.</li>
+                        <li><strong>JavaScript (ES6) :</strong> Logique de jeu, physique, collisions.</li>
+                        <li><strong>Game Design :</strong> Conception de niveaux et mécaniques coopératives.</li>
+                        <li><strong>Gestion d'assets :</strong> Sprites, tuiles et animations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT GALLERY -->
+        <section class="project-gallery">
+            <h2 class="section-title">APERÇU DU JEU</h2>
+
+            <!-- Screenshot 1 -->
+            <div class="gallery-item project-wide">
+                <div class="gallery-text">
+                    <h3>GAMEPLAY COOPÉRATIF</h3>
+                    <p>
+                        Les deux joueurs doivent collaborer pour surmonter les obstacles et atteindre la fin du niveau.
+                        La communication est la clé pour réussir.
+                    </p>
+                </div>
+                <!-- Image -->
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/summer-adventure/gameplay-1.png" alt="Gameplay Summer Adventure">
+                </div>
+            </div>
+
+            <!-- Screenshot 2 -->
+            <div class="gallery-item offset-top">
+                <div class="gallery-text">
+                    <h3>LEVEL DESIGN</h3>
+                    <p>
+                        Conception d'un environnement coloré et estival. Utilisation de tilemaps pour créer des niveaux
+                        riches et variés.
+                    </p>
+                </div>
+                <!-- Image -->
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/summer-adventure/gameplay-2.png" alt="Level Design Summer Adventure">
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">LET'S<br>WORK</h2>
+            <div class="footer-links">
+                <a href="mailto:dylanbelledent@gmail.com">dylanbelledent@gmail.com</a>
+                <a href="https://www.linkedin.com/in/dylan-belledent-18b35b341/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/dyzlek" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dylan Belledent.</span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

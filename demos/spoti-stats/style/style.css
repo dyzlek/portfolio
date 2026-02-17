@@ -1,0 +1,241 @@
+.header_modif {
+      height: 216px;
+    }
+    
+    .chart_bloc_graph {
+      width: 48%;
+      min-width: 300px;
+      max-width: 1320px;
+    }
+    
+    .chart_bloc_morceaux {
+      margin-top: 64px;
+    }
+    
+    canvas {
+      height: 300px !important;
+      width: auto !important;
+    }
+    
+    .btn-custom-size {
+      width: 78px;
+      height: 31px;
+    }
+    
+    #trackTable td, #trackTable th {
+      border: none;
+      border-top: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    #trackTable thead th {
+      background-color: #e9ecef;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+    
+    #trackTable thead th:hover {
+      background-color: #d6d8db;
+    }
+    
+    #trackTable thead th.sortable::after {
+      content: '\f0dc';
+      font-family: 'bootstrap-icons';
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+      font-size: 12px;
+    }
+    
+    #trackTable thead th.sort-asc::after {
+      content: '\f0de';
+      opacity: 1;
+      color: #0d6efd;
+    }
+    
+    #trackTable thead th.sort-desc::after {
+      content: '\f0dd';
+      opacity: 1;
+      color: #0d6efd;
+    }
+    
+    .d-none {
+      display: none !important;
+    }
+    
+    .position-relative {
+      position: relative;
+      height: 40px !important;
+    }
+    
+    .transform-hover {
+      transition: transform 0.3s ease;
+    }
+    
+    .overflow-hidden:hover .transform-hover {
+      transform: scale(1.1);
+    }
+    
+    .artist-img-hover {
+      transition: transform 0.3s ease;
+      border-radius: 0.5rem;
+    }
+    
+    .artist-img-hover:hover {
+      transform: scale(1.05);
+    }
+    
+    .search-container {
+      max-width: 300px;
+    }
+    
+    .table-header-controls {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .header_modif {
+        height: 260px;
+      }
+      
+      .graphique {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .chart_bloc_graph {
+        width: 100%;
+        margin-bottom: 24px;
+      }
+      
+      canvas {
+        width: 100% !important;
+      }
+      
+      .table-header-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-container {
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 524px) {
+      #trackTable thead {
+        display: none;
+      }
+      
+      #trackTable,
+      #trackTable tbody,
+      #trackTable tr,
+      #trackTable td {
+        display: block;
+        width: 100%;
+      }
+      
+      #trackTable tr {
+        border-top: 4px solid #dee2e6;
+        background-color: #ffffff;
+      }
+      
+      #trackTable td {
+        text-align: right;
+        padding: 8px 12px 8px 100px;
+        position: relative;
+      }
+      
+      #trackTable td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        font-weight: bold;
+        text-align: left;
+        white-space: nowrap;
+      }
+      
+      #trackTable td button {
+        margin-left: auto;
+        display: block;
+      }
+    }
+    
+    #popup-album-img {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    #popup-album-img:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      border-radius: 16px;
+    }
+    
+    #popup-album-img:active {
+      transform: scale(1.02);
+      transition: transform 0.1s ease;
+    }
+    
+    .progress-bar {
+      transition: width 0.6s ease;
+    }
+    
+    .tooltip {
+      font-size: 0.875rem;
+    }
+    
+    .badge.bg-secondary {
+      background-color: #6c757d !important;
+      color: white;
+      font-weight: 500;
+    }
+    
+    .badge:hover {
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .modal-content {
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .modal-header {
+      border-bottom: 1px solid #e9ecef;
+      border-radius: 15px 15px 0 0;
+    }
+    
+    .progress[title] {
+      cursor: help;
+    }
+    
+    .progress:hover .progress-bar {
+      filter: brightness(1.1);
+    }
+
+    /* Animation de surbrillance temporaire */
+@keyframes flashSort {
+  from { background-color: #d9edf7; }
+  to { background-color: transparent; }
+}
+
+th.animate-sort {
+  animation: flashSort 0.5s ease-in-out;
+}
+
+th.sorted-column {
+  background-color: #e7f1ff;
+  font-weight: bold;
+}
