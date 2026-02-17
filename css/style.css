@@ -7,7 +7,7 @@
     /* Passion & Ambition Palette */
     --neon-primary: #E63946;
     /* Passion Red */
-    --neon-secondary: #7B2CBF;
+    --neon-secondary: #E63946;
     /* Ambition Purple */
     --neon-accent: #4361EE;
     /* Mastery Blue */
@@ -499,7 +499,7 @@ section {
     font-family: var(--font-heading);
     font-size: 3rem;
     text-transform: uppercase;
-    color: #9D4EDD;
+    color: var(--neon-primary);
     /* Solid Violet */
     margin-bottom: 0.5rem;
     transition: transform 0.4s var(--easing-smooth);
@@ -553,7 +553,7 @@ section {
 .project-img-wrapper {
     border: 2px solid var(--neon-secondary);
     /* Colored contour */
-    box-shadow: 0 0 20px rgba(123, 44, 191, 0.2);
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.2);
     /* Optional glow */
 }
 
