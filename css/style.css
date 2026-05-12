@@ -378,36 +378,73 @@ section {
     padding-bottom: 10rem;
 }
 
-/* FILTERS */
-.filter-container {
+/* PROJECT CATEGORIES */
+.projects-category {
+    margin-bottom: 5rem;
+}
+
+.category-header {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 1.5rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
 }
 
-.filter-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-secondary);
-    padding: 0.6rem 1.5rem;
+.category-index {
     font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s var(--easing-smooth);
+    font-size: 0.8rem;
+    color: var(--neon-primary);
+    font-weight: 600;
+    opacity: 0.7;
+    flex-shrink: 0;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-    border-color: var(--neon-primary);
-    color: var(--neon-primary);
-    background: rgba(230, 57, 70, 0.05);
-    box-shadow: 0 0 15px rgba(230, 57, 70, 0.2);
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.category-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Category Badges */
+.category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.badge-pro {
+    background: var(--neon-primary);
+    color: #fff;
+}
+
+.badge-scolaire {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+}
+
+.badge-perso {
+    background: rgba(67, 97, 238, 0.18);
+    color: #7b97f5;
+    border: 1px solid rgba(67, 97, 238, 0.25);
 }
 
 .projects-grid {

@@ -132,206 +132,227 @@
             </div>
         </section>
 
-        <!-- PROJECTS SECTION: Broken Grid / Masonry Feel -->
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="projects link-trigger">
             <div class="section-marker">02 // TRAVAUX</div>
 
-            <!-- Filters -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">Tout</button>
-                <button class="filter-btn" data-filter="dev">Développement</button>
-                <button class="filter-btn" data-filter="infographie">Infographie</button>
-                <button class="filter-btn" data-filter="video">Vidéo</button>
+            <!-- PRO -->
+            <div class="projects-category">
+                <div class="category-header">
+                    <span class="category-index">01</span>
+                    <h2 class="category-title">PRO</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-item project-wide tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-easymobility.html'">
+                        <span class="category-badge badge-pro">PRO</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/easymobility/easymobility-home.webp'); background-size: cover; background-position: top center; background-color: #0d1b2a;">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">WordPress</span>
+                                    <span class="project-tag">SEO</span>
+                                    <span class="project-tag">PHP</span>
+                                </div>
+                                <h3>Easy Mobility</h3>
+                                <p class="project-desc">Conception et développement complet du site, stratégie SEO pour un distributeur de solutions de mobilité.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <!-- Project 1: Portrait / Featured -->
-                <article class="project-item project-portrait tilt-hover" data-category="infographie"
-                    onclick="window.location.href='project-food-festival.html'">
-                    <div class="project-img-wrapper">
-                        <!-- Use the new JPG for the thumbnail -->
-                        <div class="project-img"
-                            style="background-image: url('assets/affiche_page-0001.webp'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Flyer</span>
-                                <span class="project-tag">Affiche</span>
-                                <span class="project-tag">Identité</span>
+            <!-- SCOLAIRE -->
+            <div class="projects-category">
+                <div class="category-header">
+                    <span class="category-index">02</span>
+                    <h2 class="category-title">SCOLAIRE</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-item project-portrait tilt-hover" data-category="infographie"
+                        onclick="window.location.href='project-food-festival.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/affiche_page-0001.webp'); background-size: cover; background-position: center;">
                             </div>
-                            <h3>Food Festival</h3>
-                            <p class="project-desc">Identité visuelle ludique et vectorielle pour un festival culinaire.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Motion Design -->
-                <article class="project-item project-medium offset-top tilt-hover" data-category="video"
-                    onclick="window.location.href='project-motion-design.html'">
-                    <div class="project-img-wrapper">
-                        <video class="project-img" autoplay muted loop playsinline style="object-fit: cover;">
-                            <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
-                        </video>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Motion Design</span>
-                                <span class="project-tag">Vidéo</span>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">Flyer</span>
+                                    <span class="project-tag">Affiche</span>
+                                    <span class="project-tag">Identité</span>
+                                </div>
+                                <h3>Food Festival</h3>
+                                <p class="project-desc">Identité visuelle ludique et vectorielle pour un festival culinaire.</p>
                             </div>
-                            <h3>CV Vidéo & Motion</h3>
-                            <p class="project-desc">CV vidéo, showreels et expérimentations visuelles sur After Effects.
-                            </p>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Project 3: WebAR Béziers -->
-                <article class="project-item project-centered-poster tilt-hover" data-category="dev"
-                    onclick="window.location.href='project-ar-beziers.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/ar-poster.webp'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Réalité Augmentée</span>
-                                <span class="project-tag">Web 3D</span>
-                                <span class="project-tag">Affiche Interactive</span>
+                    <article class="project-item project-medium tilt-hover" data-category="video"
+                        onclick="window.location.href='project-motion-design.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <video class="project-img" autoplay muted loop playsinline style="object-fit: cover;">
+                                <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">Motion Design</span>
+                                    <span class="project-tag">Vidéo</span>
+                                </div>
+                                <h3>CV Vidéo & Motion</h3>
+                                <p class="project-desc">CV vidéo, showreels et expérimentations visuelles sur After Effects.</p>
                             </div>
-                            <h3>WebAR Béziers</h3>
-                            <p class="project-desc">Affiche interactive en Réalité Augmentée pour visualiser des
-                                données.</p>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Project 4: Marathon MMI -->
-                <article class="project-item project-wide tilt-hover" data-category="dev"
-                    onclick="window.location.href='project-marathon.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/marathon/marathon-home.webp'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Site Internet</span>
-                                <span class="project-tag">WordPress</span>
-                                <span class="project-tag">Elementor</span>
+                    <article class="project-item project-centered-poster tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-ar-beziers.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/ar-poster.webp'); background-size: cover; background-position: center;">
                             </div>
-                            <h3>Marathon MMI 2026</h3>
-                            <p class="project-desc">Création d'un site web complet en 4 jours (WordPress & Elementor).
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 5: Smiley Solution (Marathon 2025) -->
-                <article class="project-item project-wide tilt-hover" data-category="dev"
-                    onclick="window.location.href='project-smiley.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/smiley/smiley-home.webp'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Site Internet</span>
-                                <span class="project-tag">Print</span>
-                                <span class="project-tag">WordPress</span>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">Réalité Augmentée</span>
+                                    <span class="project-tag">Web 3D</span>
+                                    <span class="project-tag">Affiche Interactive</span>
+                                </div>
+                                <h3>WebAR Béziers</h3>
+                                <p class="project-desc">Affiche interactive en Réalité Augmentée pour visualiser des données.</p>
                             </div>
-                            <h3>Smiley Solution</h3>
-                            <p class="project-desc">Marathon MMI 2025 (1ère année). Site WordPress et Carte de Visite.
-                            </p>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-
-                <!-- Project 6: MoodTrackU -->
-                <article class="project-item project-wide tilt-hover" data-category="infographie"
-                    onclick="window.location.href='project-moodtracku.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/moodtracku/moodtracku-home.webp'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">UX/UI Design</span>
-                                <span class="project-tag">Figma</span>
-                                <span class="project-tag">Prototype</span>
+                    <article class="project-item project-wide tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-marathon.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/marathon/marathon-home.webp'); background-size: cover; background-position: top center;">
                             </div>
-                            <h3>MoodTrackU</h3>
-                            <p class="project-desc">Conception d'une application de suivi (Maquette & Prototype).</p>
-                        </div>
-                    </div>
-                </article>
-
-
-
-                <!-- Project 7: Spoti-Stats -->
-                <article class="project-item project-centered-poster tilt-hover" data-category="dev"
-                    onclick="window.location.href='project-spoti-stats.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/spoti-stats/dashboard.png'); background-size: cover; background-position: top center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">API Spotify</span>
-                                <span class="project-tag">Data Visualization</span>
-                                <span class="project-tag">JS</span>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">Site Internet</span>
+                                    <span class="project-tag">WordPress</span>
+                                    <span class="project-tag">Elementor</span>
+                                </div>
+                                <h3>Marathon MMI 2026</h3>
+                                <p class="project-desc">Création d'un site web complet en 4 jours (WordPress & Elementor).</p>
                             </div>
-                            <h3>Spoti-Stats</h3>
-                            <p class="project-desc">Dashboard de statistiques musicales via l'API Spotify.</p>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Project 8: Summer Adventure -->
-                <article class="project-item project-wide tilt-hover" data-category="dev"
-                    onclick="window.location.href='project-summer-adventure.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/summer-adventure/gameplay-1.png'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">Jeu Vidéo</span>
-                                <span class="project-tag">Phaser JS</span>
-                                <span class="project-tag">Coop</span>
+                    <article class="project-item project-wide tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-smiley.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/smiley/smiley-home.webp'); background-size: cover; background-position: top center;">
                             </div>
-                            <h3>Summer Adventure</h3>
-                            <p class="project-desc">Jeu de plateforme coopératif à deux joueurs développé avec Phaser.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 9: SAE 203 - LEGO Collection -->
-                <article class="project-item project-medium tilt-hover" data-category="dev"
-                    onclick="window.location.href='project-sae203.html'">
-                    <div class="project-img-wrapper">
-                        <div class="project-img"
-                            style="background-image: url('assets/lego/lego-hero.png'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="project-overlay">
-                            <div class="project-tags">
-                                <span class="project-tag">PHP / MySQL</span>
-                                <span class="project-tag">MVC</span>
-                                <span class="project-tag">Fullstack</span>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">Site Internet</span>
+                                    <span class="project-tag">Print</span>
+                                    <span class="project-tag">WordPress</span>
+                                </div>
+                                <h3>Smiley Solution</h3>
+                                <p class="project-desc">Marathon MMI 2025 (1ère année). Site WordPress et Carte de Visite.</p>
                             </div>
-                            <h3>LEGO Collection</h3>
-                            <p class="project-desc">Plateforme de gestion de collection LEGO avec espace communautaire.
-                            </p>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
+                    <article class="project-item project-wide tilt-hover" data-category="infographie"
+                        onclick="window.location.href='project-moodtracku.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/moodtracku/moodtracku-home.webp'); background-size: cover; background-position: top center;">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">UX/UI Design</span>
+                                    <span class="project-tag">Figma</span>
+                                    <span class="project-tag">Prototype</span>
+                                </div>
+                                <h3>MoodTrackU</h3>
+                                <p class="project-desc">Conception d'une application de suivi (Maquette & Prototype).</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item project-wide tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-summer-adventure.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/summer-adventure/gameplay-1.png'); background-size: cover; background-position: center;">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">Jeu Vidéo</span>
+                                    <span class="project-tag">Phaser JS</span>
+                                    <span class="project-tag">Coop</span>
+                                </div>
+                                <h3>Summer Adventure</h3>
+                                <p class="project-desc">Jeu de plateforme coopératif à deux joueurs développé avec Phaser.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-item project-medium tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-sae203.html'">
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/lego/lego-hero.png'); background-size: cover; background-position: center;">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">PHP / MySQL</span>
+                                    <span class="project-tag">MVC</span>
+                                    <span class="project-tag">Fullstack</span>
+                                </div>
+                                <h3>LEGO Collection</h3>
+                                <p class="project-desc">Plateforme de gestion de collection LEGO avec espace communautaire.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <!-- Load More Button -->
-            <div class="load-more-container" style="text-align: center; margin-top: 3rem;">
-                <button id="load-more-btn" class="btn-secondary tilt-hover magnetic-btn">
-                    VOIR PLUS DE PROJETS
-                </button>
+
+            <!-- PERSO -->
+            <div class="projects-category">
+                <div class="category-header">
+                    <span class="category-index">03</span>
+                    <h2 class="category-title">PERSO</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-item project-centered-poster tilt-hover" data-category="dev"
+                        onclick="window.location.href='project-spoti-stats.html'">
+                        <span class="category-badge badge-perso">PERSO</span>
+                        <div class="project-img-wrapper">
+                            <div class="project-img"
+                                style="background-image: url('assets/spoti-stats/dashboard.png'); background-size: cover; background-position: top center;">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-tags">
+                                    <span class="project-tag">API Spotify</span>
+                                    <span class="project-tag">Data Visualization</span>
+                                    <span class="project-tag">JS</span>
+                                </div>
+                                <h3>Spoti-Stats</h3>
+                                <p class="project-desc">Dashboard de statistiques musicales via l'API Spotify.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 

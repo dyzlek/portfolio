@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Mobility - Refonte & SEO | Dylan Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+</head>
+
+<body>
+    <div class="grain-overlay"></div>
+
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo">D<span>.</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-btn">MENU</div>
+    </header>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="hero project-hero">
+            <div class="project-hero-bg" style="background-image: url('assets/easymobility/easymobility-home.webp'); background-color: #0d1b2a;"></div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    EASY<br>
+                    <span class="line-2">MOBILITY</span>
+                </h1>
+                <p class="hero-sub">Refonte complète du site et stratégie SEO pour un distributeur de solutions de mobilité.</p>
+                <div class="hero-cta-group">
+                    <a href="https://www.easymobility.fr" target="_blank" rel="noopener" class="btn-primary magnetic-btn">Voir le site</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb-1" style="background: radial-gradient(circle, #2563eb 0%, transparent 70%);"></div>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAILS -->
+        <section class="project-details">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">LE PROJET</h2>
+                    <div class="bio-text">
+                        <p>
+                            Easy Mobility est le distributeur exclusif en France des solutions de mobilité et de
+                            levage AACURAT. J'ai pris en charge la refonte complète du site, depuis la structure
+                            jusqu'à la mise en ligne, en passant par l'intégration des contenus et la configuration
+                            technique.
+                        </p>
+                        <p class="highlight-p">
+                            Le site devait être professionnel, accessible et convaincant pour une clientèle cherchant
+                            des équipements médicaux spécialisés. J'ai travaillé sur l'architecture des pages, la
+                            hiérarchie de l'information et la cohérence visuelle de l'ensemble.
+                        </p>
+                        <p>
+                            En parallèle du développement, j'ai mis en place une stratégie SEO complète : audit
+                            technique, optimisation des balises, rédaction des méta-descriptions, structuration des
+                            URLs, et suivi des performances via Google Search Console.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">PÉRIMÈTRE</h2>
+                    <ul class="skill-list">
+                        <li><strong>CMS :</strong> WordPress, ACF, Elementor</li>
+                        <li><strong>Backend :</strong> PHP, configuration serveur (.htaccess)</li>
+                        <li><strong>SEO :</strong> Audit technique, optimisation on-page, Google Search Console</li>
+                        <li><strong>Sécurité :</strong> Protection anti-spam, validation serveur des formulaires</li>
+                        <li><strong>Performance :</strong> Optimisation des assets, cache, compression</li>
+                        <li><strong>UX :</strong> Architecture de l'information, parcours utilisateur</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT GALLERY -->
+        <section class="project-gallery">
+            <h2 class="section-title">RÉALISATIONS</h2>
+
+            <div class="gallery-item project-wide">
+                <div class="gallery-text">
+                    <h3>SITE COMPLET</h3>
+                    <p>
+                        Refonte intégrale du site sous WordPress avec un design épuré centré sur la conversion.
+                        Chaque page produit a été structurée pour mettre en avant les caractéristiques clés
+                        et faciliter la prise de contact.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/easymobility/easymobility-home.webp" alt="Easy Mobility — page d'accueil">
+                </div>
+            </div>
+
+            <div class="gallery-item offset-top">
+                <div class="gallery-text">
+                    <h3>SEO & FORMULAIRES</h3>
+                    <p>
+                        Mise en place d'une stratégie SEO technique et éditoriale, avec protection
+                        anti-spam avancée sur les formulaires de contact et de devis côté serveur.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/easymobility/easymobility-contact.webp" alt="Easy Mobility — formulaire de contact">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">LET'S<br>WORK</h2>
+            <div class="footer-links">
+                <a href="mailto:dylanbelledent@gmail.com">dylanbelledent@gmail.com</a>
+                <a href="https://www.linkedin.com/in/dylan-belledent-18b35b341/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/dyzlek" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dylan Belledent.</span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

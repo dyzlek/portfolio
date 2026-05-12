@@ -1,60 +1,44 @@
-# Portfolio - Dylan Belledent 🎨💻
+# Portfolio — Dylan Belledent
 
-Bienvenue sur le dépôt de mon portfolio personnel.
-Je suis **Dylan Belledent**, étudiant en seconde année de BUT MMI (Métiers du Multimédia et de l’Internet). Ce portfolio illustre mon univers créatif et technique, mêlant développement web, design, motion design et 3D.
-
-👉 **[Voir le portfolio en ligne](https://dyzlek.github.io/portfolio/)**
-## 🚀 À propos
-
-"Pas juste du code. De l'expérience."
-
-Je conçois des expériences web modernes et interactives. Mon profil est hybride :
-- **Technique** : Développement front & back-end.
-- **Créatif** : UI/UX, Motion Design, 3D.
-
-## 📂 Projets Présentés
-
-Voici une sélection des travaux mis en avant dans ce portfolio :
-
-1.  **Food Festival** : Identité visuelle (Flyer, Affiche) pour un festival culinaire.
-2.  **CV Vidéo & Motion** : Showreel et expérimentations sur After Effects.
-3.  **WebAR Béziers** : Affiche interactive en Réalité Augmentée et Web 3D.
-4.  **Marathon MMI 2026** : Site web réalisé en 4 jours sur WordPress & Elementor.
-5.  **Smiley Solution** : Site WordPress et carte de visite (Projet MMI 1ère année).
-6.  **MoodTrackU** : Maquette & Prototype Figma pour une application de suivi.
-
-## 🛠️ Compétences
-
-### Développement
-*   HTML / CSS / JavaScript
-*   PHP / SQL
-*   Tailwind CSS / Bootstrap
-*   Node.js / Python
-
-### Création
-*   UI / UX Design (Figma)
-*   Motion Design (After Effects)
-*   Animation 3D
-*   Adobe Creative Suite
-
-### Humain
-*   Créativité, Analyse, Esprit d'équipe, Curiosité, Autonomie.
-
-## 🔧 Installation / Visualisation
-
-Pour visualiser ce projet localement :
-
-1.  Clonez ce dépôt.
-2.  Ouvrez le fichier `index.html` dans votre navigateur.
-3.  (Optionnel) Utilisez une extension comme "Live Server" sur VS Code pour une meilleure expérience.
-
-## 📫 Contact
-
-N'hésitez pas à me contacter pour toute opportunité ou collaboration !
-
-*   📧 Email : [dylanbelledent@gmail.com](mailto:dylanbelledent@gmail.com)
-*   💼 LinkedIn : [Dylan Belledent](https://www.linkedin.com/in/dylan-belledent-18b35b341/)
-*   code GitHub : [dyzlek](https://github.com/dyzlek)
+**[Voir le portfolio en ligne](https://dyzlek.github.io/portfolio/)**
 
 ---
-© 2026 Dylan Belledent. Tous droits réservés.
+
+Je suis Dylan Belledent, étudiant en deuxième année de BUT MMI (Métiers du Multimédia et de l'Internet). Mon profil est hybride : développement web d'un côté, création visuelle de l'autre — UI/UX, motion design, 3D.
+
+## Projets
+
+### Pro
+- **Easy Mobility** — Refonte complète du site et stratégie SEO pour un distributeur de solutions de mobilité réduite. WordPress, PHP, Google Search Console.
+
+### Scolaire
+- **Food Festival** — Identité visuelle (flyer, affiche) pour un festival culinaire.
+- **CV Vidéo & Motion** — Showreel et expérimentations After Effects.
+- **WebAR Béziers** — Affiche interactive en réalité augmentée et Web 3D.
+- **Marathon MMI 2026** — Site réalisé en 4 jours sous WordPress & Elementor.
+- **Smiley Solution** — Site WordPress et carte de visite (Marathon MMI 2025).
+- **MoodTrackU** — Maquette et prototype Figma pour une app de suivi d'humeur.
+- **Summer Adventure** — Jeu de plateforme coopératif développé avec Phaser JS.
+- **LEGO Collection** — Plateforme fullstack PHP/MySQL avec architecture MVC.
+
+### Perso
+- **Spoti-Stats** — Dashboard de statistiques musicales via l'API Spotify (OAuth 2.0, JS).
+
+## Stack
+
+**Dev** — HTML, CSS, JavaScript, PHP, SQL, Tailwind CSS, Bootstrap, Node.js, Python  
+**Création** — Figma, After Effects, Adobe Suite, animation 3D
+
+## Lancer en local
+
+Cloner le dépôt et ouvrir `index.html` dans un navigateur. Une extension Live Server (VS Code) améliore l'expérience.
+
+## Contact
+
+- [dylanbelledent@gmail.com](mailto:dylanbelledent@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/dylan-belledent-18b35b341/)
+- [GitHub](https://github.com/dyzlek)
+
+---
+
+© 2026 Dylan Belledent.
