@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KC Catalogue — Plateforme Gaming | Dylan Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+</head>
+
+<body>
+    <div class="grain-overlay"></div>
+
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo">D<span>.</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#about">À Propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-btn">MENU</div>
+    </header>
+
+    <main>
+        <!-- PROJECT HERO -->
+        <section class="hero project-hero">
+            <div class="project-hero-bg kcc-hero-bg"
+                style="background-image: url('assets/kcc/kcc-home.webp'); background-color: #080c14;"></div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    KC<br>
+                    <span class="line-2">CATALOGUE</span>
+                </h1>
+                <p class="hero-sub">Plateforme complète de gestion de collection de jeux vidéo — bibliothèque, reviews, social et mini-jeux.</p>
+                <div class="hero-cta-group">
+                    <a href="https://github.com/dyzlek/KCC" target="_blank" rel="noopener" class="btn-primary magnetic-btn">
+                        Voir sur GitHub
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="http://localhost:3000" target="_blank" class="btn-secondary magnetic-btn">Démo locale</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb orb-1" style="background: radial-gradient(circle, #4361EE 0%, transparent 70%);"></div>
+                <div class="orb orb-2" style="background: radial-gradient(circle, #7b2d8b 0%, transparent 70%);"></div>
+            </div>
+        </section>
+
+        <!-- PROJECT DETAILS -->
+        <section class="project-details">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">LE PROJET</h2>
+                    <div class="bio-text">
+                        <p>
+                            KC Catalogue est né d'une frustration simple : pas de plateforme qui centralise vraiment
+                            ma collection de jeux, mes envies et mes avis. J'ai donc décidé d'en construire une moi-même.
+                        </p>
+                        <p class="highlight-p">
+                            Le projet connecte l'API IGDB pour récupérer des données en temps réel sur des milliers
+                            de jeux — couvertures, notes, dates de sortie, screenshots. L'utilisateur peut ensuite
+                            gérer sa bibliothèque avec des statuts (Terminé, En cours, Abandonné...), noter les jeux
+                            sur 10, écrire des reviews, et suivre d'autres joueurs.
+                        </p>
+                        <p>
+                            C'est le projet où j'ai appris le plus côté backend : architecture MVC, gestion de sessions,
+                            authentification via Passport.js avec connexion Steam, envoi d'e-mails transactionnels,
+                            et une base de données relationnelle avec plusieurs dizaines de jointures.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">STACK</h2>
+                    <ul class="skill-list">
+                        <li><strong>Backend :</strong> Node.js, Express 5</li>
+                        <li><strong>Base de données :</strong> MySQL avec mysql2/promise</li>
+                        <li><strong>Templates :</strong> Nunjucks (rendu serveur)</li>
+                        <li><strong>Auth :</strong> Passport.js, bcrypt, sessions</li>
+                        <li><strong>API :</strong> IGDB (Twitch) — jeux, médias, métadonnées</li>
+                        <li><strong>Email :</strong> Nodemailer (reset de mot de passe)</li>
+                        <li><strong>Upload :</strong> Multer (avatars, bannières)</li>
+                        <li><strong>Style :</strong> Vanilla CSS responsive</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="project-gallery">
+            <h2 class="section-title">FONCTIONNALITÉS</h2>
+
+            <div class="kcc-features-grid">
+
+                <div class="kcc-feature-card">
+                    <div class="kcc-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                            <path d="M6 12h4m-2-2v4"></path>
+                            <line x1="15" y1="11" x2="15.01" y2="11"></line>
+                            <line x1="18" y1="13" x2="18.01" y2="13"></line>
+                        </svg>
+                    </div>
+                    <h3>Collection & Wishlist</h3>
+                    <p>Ajout de jeux à sa bibliothèque avec statuts personnalisés : Terminé, En cours, Abandonné, Wishlist. Progression visible en un coup d'œil.</p>
+                </div>
+
+                <div class="kcc-feature-card">
+                    <div class="kcc-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Reviews & Notes</h3>
+                    <p>Système de notation sur 10 avec critiques rédigées. Chaque jeu agrège les avis de la communauté pour afficher une note globale sur la plateforme.</p>
+                </div>
+
+                <div class="kcc-feature-card">
+                    <div class="kcc-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Social & Profils</h3>
+                    <p>Système de suivi entre utilisateurs, profils publics personnalisables (avatar, bannière, bio), et vue de l'activité de la communauté.</p>
+                </div>
+
+                <div class="kcc-feature-card">
+                    <div class="kcc-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                    </div>
+                    <h3>Intégration IGDB</h3>
+                    <p>Connexion complète à l'API IGDB (Twitch) : données en temps réel, artworks, screenshots, notes de presse, dates de sortie multi-plateformes.</p>
+                </div>
+
+                <div class="kcc-feature-card">
+                    <div class="kcc-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Higher / Lower</h3>
+                    <p>Mini-jeu : deviner quel jeu a la meilleure note sur la plateforme entre deux titres. Simple à jouer, difficile à maîtriser.</p>
+                </div>
+
+                <div class="kcc-feature-card">
+                    <div class="kcc-feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Calendrier de sorties</h3>
+                    <p>Vue calendrier des prochaines sorties de jeux. Suivre les dates importantes sans quitter la plateforme.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SCREENSHOTS -->
+        <section class="project-gallery" style="padding-top: 0;">
+            <h2 class="section-title">INTERFACE</h2>
+
+            <div class="gallery-item project-wide">
+                <div class="gallery-text">
+                    <h3>ACCUEIL & BIBLIOTHÈQUE</h3>
+                    <p>
+                        La page principale affiche les jeux récents, les activités de la communauté
+                        et les recommandations basées sur l'activité IGDB. La bibliothèque personnelle
+                        offre un tri et un filtrage avancés.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/kcc/kcc-home.webp" alt="KC Catalogue — Accueil">
+                </div>
+            </div>
+
+            <div class="gallery-item offset-top">
+                <div class="gallery-text">
+                    <h3>FICHE JEU & REVIEWS</h3>
+                    <p>
+                        Chaque jeu a sa fiche détaillée : synopsis, plateformes, screenshots IGDB,
+                        note de la communauté et liste des critiques des utilisateurs.
+                        L'ajout à sa collection se fait en un clic.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/kcc/kcc-game.webp" alt="KC Catalogue — Fiche jeu">
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-text">
+                    <h3>PROFIL UTILISATEUR</h3>
+                    <p>
+                        Profil entièrement personnalisable : avatar, bannière, bio, statistiques
+                        de collection. Visible publiquement par les autres membres.
+                    </p>
+                </div>
+                <div class="image-container tilt-hover lightbox-trigger">
+                    <img src="assets/kcc/kcc-profile.webp" alt="KC Catalogue — Profil">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">LET'S<br>WORK</h2>
+            <div class="footer-links">
+                <a href="mailto:dylanbelledent@gmail.com">dylanbelledent@gmail.com</a>
+                <a href="https://www.linkedin.com/in/dylan-belledent-18b35b341/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/dyzlek" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dylan Belledent.</span>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
