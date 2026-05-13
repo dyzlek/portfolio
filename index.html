@@ -96,37 +96,46 @@
 
             <div class="about-container">
                 <div class="about-visual">
-                    <div class="photo-frame tilt-hover" style="border: none; padding: 0;">
-                        <!-- Experience Animation -->
-                        <div class="experience-anim">
-                            <div class="cube-container">
-                                <div class="cube">
-                                    <div class="face front">EXP</div>
-                                    <div class="face back">DEV</div>
-                                    <div class="face right">WEB</div>
-                                    <div class="face left">UI</div>
-                                    <div class="face top"></div>
-                                    <div class="face bottom"></div>
-                                </div>
-                            </div>
+                    <div class="terminal-card">
+                        <div class="terminal-bar">
+                            <span class="t-dot t-red"></span>
+                            <span class="t-dot t-yellow"></span>
+                            <span class="t-dot t-green"></span>
+                            <span class="t-filename">dylan.txt</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="t-prompt">~</span> <span class="t-cmd">whoami</span></p>
+                            <p class="t-output">Dylan Belledent</p>
+                            <p class="t-blank"></p>
+                            <p><span class="t-prompt">~</span> <span class="t-cmd">cat info.txt</span></p>
+                            <p class="t-output">BUT MMI — 2ème année</p>
+                            <p class="t-output">Béziers, France</p>
+                            <p class="t-output">Dev &amp; Design hybride</p>
+                            <p class="t-blank"></p>
+                            <p><span class="t-prompt">~</span> <span class="t-cmd">cat hobbies.txt</span></p>
+                            <p class="t-output">Coasters / Gaming</p>
+                            <p class="t-output">Maker / Cinéma</p>
+                            <p class="t-blank"></p>
+                            <p><span class="t-prompt">~</span> <span class="t-cmd">echo $STATUS</span></p>
+                            <p class="t-output t-highlight">Dispo pour un stage 2026</p>
+                            <p class="t-cursor">▋</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-text">
-                    <h2 class="section-title">Pas juste du code.<br>De l'expérience.</h2>
+                    <h2 class="section-title">Dev le jour,<br>bricoleur la nuit.</h2>
                     <div class="bio-text">
-                        <p>Je m’appelle Dylan et je suis étudiant en deuxième année de BUT Métiers du Multimédia et de
-                            l’Internet. J’ai découvert le développement web en créant mes propres sites, et j’ai tout de
-                            suite aimé pouvoir transformer une idée en quelque chose de concret et utilisable.</p>
-                        <p class="highlight-p">Je développe principalement avec HTML, CSS, JavaScript, ainsi que
-                            Bootstrap et Tailwind CSS pour créer des interfaces modernes et responsives. J’ai aussi des
-                            bases en PHP, SQL, Node.js et Python, ce qui me permet d’avoir une vision globale d’un
-                            projet web.</p>
-                        <p>Je m’intéresse également beaucoup à la création visuelle, avec Figma pour l’UI/UX et la suite
-                            Adobe pour le motion design, l’animation et le montage vidéo. J’aime concevoir des projets
-                            complets, en combinant technique et créativité.</p>
-                        <p>Mon objectif est de devenir développeur web et de participer à des projets créatifs, où je
-                            pourrai continuer à apprendre, progresser et donner vie à mes idées.</p>
+                        <p>Je m’appelle Dylan. J’ai découvert le développement en voulant créer mes propres sites — et
+                            j’ai jamais vraiment arrêté depuis. Je suis en 2ème année de BUT MMI à Béziers, et je
+                            passe mon temps à mélanger du code et du design.</p>
+                        <p class="highlight-p">Ce qui m’intéresse, c’est de faire des choses qui fonctionnent et qui
+                            ont l’air bien. Du front, du back, de l’UI, du motion — j’aime toucher à tout plutôt que
+                            rester dans une seule case.</p>
+                        <p>En dehors du dev, je suis fan de coasters (montagnes russes), de gaming, de cinéma, et
+                            j’aime bidouiller des trucs. Ce côté curieux et maker se retrouve dans ma façon de
+                            travailler : j’explore, je teste, je recommence jusqu’à que ça soit bien.</p>
+                        <p>Prochain objectif : un stage en développement web ou en agence créative pour travailler
+                            sur des projets qui ont du sens.</p>
                     </div>
                 </div>
             </div>
@@ -323,20 +332,10 @@
                             </div>
                         </div>
                     </article>
-                </div>
-            </div>
 
-            <!-- PERSO -->
-            <div class="projects-category">
-                <div class="category-header">
-                    <span class="category-index">03</span>
-                    <h2 class="category-title">PERSO</h2>
-                    <div class="category-line"></div>
-                </div>
-                <div class="projects-grid">
                     <article class="project-item project-centered-poster tilt-hover" data-category="dev"
                         onclick="window.location.href='project-spoti-stats.html'">
-                        <span class="category-badge badge-perso">PERSO</span>
+                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
                         <div class="project-img-wrapper">
                             <div class="project-img"
                                 style="background-image: url('assets/spoti-stats/dashboard.png'); background-size: cover; background-position: top center;">
@@ -352,6 +351,22 @@
                             </div>
                         </div>
                     </article>
+                </div>
+            </div>
+
+            <!-- PERSO -->
+            <div class="projects-category">
+                <div class="category-header">
+                    <span class="category-index">03</span>
+                    <h2 class="category-title">PERSO</h2>
+                    <div class="category-line"></div>
+                </div>
+                <p class="category-desc">Pas de contrainte, pas de deadline, pas de brief client. Ces projets existent parce que j'en avais envie — pour tester une techno, explorer une idée ou juste me faire plaisir. C'est souvent là que j'apprends le plus.</p>
+                <div class="projects-grid projects-grid--perso">
+                    <div class="perso-coming-soon">
+                        <span class="coming-soon-label">EN COURS</span>
+                        <p>D'autres projets arrivent ici — des expérimentations, des side-projects, des trucs pas encore finis mais déjà intéressants.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -375,8 +390,8 @@
                     <ul class="skill-list">
                         <li>HTML / CSS / JavaScript</li>
                         <li>PHP / SQL</li>
-                        <li>Tailwind CSS</li>
-                        <li>Bootstrap</li>
+                        <li>Tailwind CSS / Bootstrap</li>
+                        <li>WordPress / PrestaShop</li>
                         <li>Node.js</li>
                         <li>Python</li>
                     </ul>
