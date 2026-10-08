@@ -42,6 +42,36 @@ export const marquee = [
 export const projects = [
   /* ---------------- Mis en avant ---------------- */
   {
+    slug: 'sillon',
+    featured: true,
+    title: 'Sillon',
+    year: '2026',
+    category: 'Perso',
+    kind: 'Lecteur de musique perso',
+    summary: 'Mes sons sur mon propre serveur, un écran réduit au minimum et un visualiseur 3D qui danse sur la musique.',
+    tags: ['Node.js', 'SQLite', 'Three.js', 'Web Audio'],
+    color: '#FF5A2E',
+    pattern: 'rings',
+    cover: 'assets/sillon/sphere.webp',
+    links: [{ label: 'Code source', url: 'https://github.com/dyzlek/sillon' }],
+    intro: [
+      'Un lecteur pour écouter ma musique depuis mon serveur, sans passer par une plateforme. Le serveur garde les fichiers et les envoie en streaming ; l’écran ne montre que le titre en cours, une ligne de progression et un nuage de particules qui réagit au son en direct.',
+      'Toute la bibliothèque vit dans une base SQLite : titres, artistes, pochettes, durées, écoutes, et pour chaque son la suite de vues du visualiseur et leur rythme.',
+    ],
+    facts: [
+      ['Serveur', 'Node.js sans framework, streaming par plages d’octets, dossier surveillé, envoi par glisser-déposer protégé par une clé'],
+      ['Base', 'SQLite intégré à Node : bibliothèque, historique d’écoute, réglages du visualiseur par son'],
+      ['Visualiseur', '8 400 particules Three.js, trois formes calculées sur le GPU et interpolées, pilotées par l’analyseur Web Audio'],
+      ['Outils', 'Import d’un dossier avec association automatique des pochettes, édition de la base en ligne de commande'],
+      ['Design', 'Même grammaire que ce portfolio : Archivo condensé, Geist Mono, grain, une seule couleur d’accent'],
+    ],
+    sections: [
+      { title: 'Lecture', text: 'Le titre en grand, l’artiste et la pochette, des commandes en texte. La sphère se gonfle bande par bande : chaque latitude écoute une partie du spectre.', images: ['assets/sillon/sphere.webp'] },
+      { title: 'Trois vues', text: 'L’anneau suit chaque fréquence autour du cercle ; le spectre est un paysage qui défile, chaque rangée étant un instant passé du morceau. Les vues s’enchaînent seules, selon la base, et plus tôt sur une montée de basses.', images: ['assets/sillon/anneau.webp', 'assets/sillon/spectre.webp'] },
+      { title: 'Index', text: 'Tous les sons du serveur, avec le même effet au survol que l’index de ce portfolio. On y dépose aussi de nouveaux fichiers.', images: ['assets/sillon/index.webp'] },
+    ],
+  },
+  {
     slug: 'photoprint-assistant',
     featured: true,
     title: 'Photoprint Assistant',
