@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet — Dylan Belledent</title>
+  <meta name="description" content="Projet de Dylan Belledent, développeur full stack." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121110'/%3E%3Crect x='19' y='19' width='8' height='8' fill='%23FF4A1C'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "gsap": "./vendor/gsap/index.js",
+        "gsap/ScrollTrigger": "./vendor/gsap/ScrollTrigger.js",
+        "gsap/SplitText": "./vendor/gsap/SplitText.js",
+        "lenis": "./vendor/lenis.mjs"
+      }
+    }
+  </script>
+</head>
+<body class="page-project">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" class="nav__logo" aria-label="Accueil">DB<span>©</span></a>
+    <nav class="nav__links" aria-label="Navigation">
+      <a href="index.html#work">← Tous les projets</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">
+        <span class="theme-toggle__dot"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="pj"><!-- rempli par js/project.js --></main>
+
+  <div class="lightbox" hidden>
+    <button type="button" class="lightbox__close mono" aria-label="Fermer">Fermer ×</button>
+    <img alt="" />
+  </div>
+
+  <script type="module" src="js/project.js"></script>
+</body>
+</html>

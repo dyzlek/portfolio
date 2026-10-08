@@ -1,558 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dylan | Portfolio MMI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1.1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dylan Belledent — Développeur full stack</title>
+  <meta name="description" content="Portfolio de Dylan Belledent, développeur full stack en BUT MMI à Béziers : sites, modules PrestaShop, plugins WordPress, WebGL et VR." />
+  <meta property="og:title" content="Dylan Belledent — Développeur full stack" />
+  <meta property="og:description" content="Des interfaces qui bougent et des back-ends qui tiennent." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121110'/%3E%3Crect x='19' y='19' width='8' height='8' fill='%23FF4A1C'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/three.module.js",
+        "gsap": "./vendor/gsap/index.js",
+        "gsap/ScrollTrigger": "./vendor/gsap/ScrollTrigger.js",
+        "gsap/SplitText": "./vendor/gsap/SplitText.js",
+        "lenis": "./vendor/lenis.mjs"
+      }
+    }
+  </script>
 </head>
+<body class="is-loading">
+  <a class="skip" href="#main">Aller au contenu</a>
 
-<body>
-    <!-- Custom Cursor Removed as per request -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__top mono"><span>DB©</span><span>Portfolio 2026</span></div>
+    <div class="loader__count"><span class="loader__num">000</span></div>
+    <div class="loader__bar"><span></span></div>
+  </div>
 
-    <!-- Grain Overlay for Texture -->
-    <div class="grain-overlay"></div>
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
 
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay">
-        <ul class="mobile-nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="Retour en haut">DB<span>©</span></a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#about"><span class="mono">01</span> À propos</a>
+      <a href="#stack"><span class="mono">02</span> Stack</a>
+      <a href="#work"><span class="mono">03</span> Projets</a>
+      <a href="#lab"><span class="mono">05</span> Lab</a>
+      <a href="#contact"><span class="mono">06</span> Contact</a>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__status mono"><i></i> Ouvert aux opportunités</span>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">
+        <span class="theme-toggle__dot"></span>
+      </button>
     </div>
+  </header>
 
-    <header>
-        <a href="index.html" class="logo">D<span>.</span></a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-btn">MENU</div>
-    </header>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" data-scene="hero">
+      <p class="hero__eyebrow mono"><span class="sq"></span> Développeur full stack — BUT MMI, Béziers</p>
+      <h1 class="hero__title" aria-label="Dylan Belledent">
+        <span class="line"><span class="js-split">Dylan</span></span>
+        <span class="line line--indent"><span class="js-split">Belledent</span></span>
+      </h1>
+      <div class="hero__bottom">
+        <p class="hero__role">Je conçois des interfaces qui <em>bougent</em> et des back-ends qui <em>tiennent</em>. Du pixel à la base de données.</p>
+        <p class="hero__meta mono">Béziers, France<br />BUT MMI — 3e année<br />43.34°N — 3.21°E</p>
+        <a href="#about" class="hero__scroll mono" data-cursor="Go">
+          <span>Scroll</span><span class="hero__scroll-line"></span>
+        </a>
+      </div>
+    </section>
 
-    <main>
-        <!-- HERO SECTION: Asymmetric & Direct -->
-        <section class="hero selection-target">
-            <!-- Background Marquee -->
-            <div class="marquee-container">
-                <div class="marquee-content">
-                    DEV // DESIGN // MOTION // 3D // INTERACTIVE // CREATIVE //
-                    DEV // DESIGN // MOTION // 3D // INTERACTIVE // CREATIVE //
-                </div>
-            </div>
+    <!-- ABOUT -->
+    <section class="about" id="about" data-scene="about">
+      <div class="section-label mono"><span>[01]</span> À propos</div>
+      <div class="about__content">
+        <h2 class="about__title js-lines">Dev le jour, bricoleur la nuit.</h2>
+        <p class="about__text js-words">J’ai découvert le développement en voulant créer mes propres sites, et je n’ai jamais vraiment arrêté depuis. Je suis en 3e année de BUT MMI à Béziers, et je passe mon temps à mélanger code et design.</p>
+        <p class="about__text js-words">Ce qui m’intéresse, c’est de faire des choses qui fonctionnent et qui ont l’air bien. Du front, du back, des modules PrestaShop, des plugins WordPress, de la 3D et même de la VR : j’aime toucher à tout plutôt que rester dans une seule case.</p>
+        <p class="about__text js-words">En dehors du code, je suis fan de montagnes russes, de jeux vidéo et de cinéma, et j’aime bricoler. Ce côté curieux se retrouve dans ma façon de travailler : j’explore, je teste, je recommence jusqu’à ce que ce soit bien.</p>
+        <ul class="about__facts mono">
+          <li><span>Formation</span>BUT MMI, IUT de Béziers — 3e année</li>
+          <li><span>Profil</span>Développeur full stack avec un vrai œil design</li>
+          <li><span>Passions</span>Coasters, gaming, cinéma, maker</li>
+        </ul>
+      </div>
+    </section>
 
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="line-1">DYLAN.</span>
-                    <span class="line-2">CRÉATIF &</span>
-                    <span class="line-3">TECHNIQUE.</span>
-                </h1>
-                <p class="hero-sub">
-                    Étudiant en seconde année de MMI, je conçois des expériences web modernes entre code, design et
-                    interaction.
-                </p>
-                <div class="hero-cta-group">
-                    <a href="#projects" class="btn-primary tilt-hover magnetic-btn">
-                        VOIR MES PROJETS
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                    <a href="assets/cv.pdf" target="_blank" class="btn-secondary tilt-hover magnetic-btn">
-                        TÉLÉCHARGER CV
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <!-- Abstract Luminous Orb -->
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-            </div>
-        </section>
+    <!-- STACK -->
+    <section class="stack" id="stack" data-scene="stack">
+      <div class="section-label mono"><span>[02]</span> La stack</div>
+      <h2 class="stack__title js-lines">Trois couches,<br />un seul dev.</h2>
+      <ol class="layers"></ol>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__row"><div class="marquee__inner"></div></div>
+        <div class="marquee__row marquee__row--reverse"><div class="marquee__inner"></div></div>
+      </div>
+    </section>
 
-        <!-- ABOUT SECTION: Personal Story -->
-        <section id="about" class="about selection-target">
-            <div class="section-marker">01 // PROFIL</div>
+    <!-- WORK -->
+    <section class="work" id="work" data-scene="work">
+      <div class="work__track">
+        <div class="work__intro">
+          <div class="section-label mono"><span>[03]</span> Projets sélectionnés</div>
+          <h2 class="work__title js-lines">Des trucs que j’ai construits.</h2>
+          <p class="work__hint mono">Continue de scroller →</p>
+        </div>
+        <!-- cartes injectées depuis data.js -->
+      </div>
+      <div class="work__progress" aria-hidden="true"><span></span></div>
+    </section>
 
-            <div class="about-container">
-                <div class="about-visual">
-                    <div class="terminal-card">
-                        <div class="terminal-bar">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                            <span class="t-filename">dylan.txt</span>
-                        </div>
-                        <div class="terminal-body">
-                            <p><span class="t-prompt">~</span> <span class="t-cmd">whoami</span></p>
-                            <p class="t-output">Dylan Belledent</p>
-                            <p class="t-blank"></p>
-                            <p><span class="t-prompt">~</span> <span class="t-cmd">cat info.txt</span></p>
-                            <p class="t-output">BUT MMI — 2ème année</p>
-                            <p class="t-output">Béziers, France</p>
-                            <p class="t-output">Dev &amp; Design hybride</p>
-                            <p class="t-blank"></p>
-                            <p><span class="t-prompt">~</span> <span class="t-cmd">cat hobbies.txt</span></p>
-                            <p class="t-output">Coasters / Gaming</p>
-                            <p class="t-output">Maker / Cinéma</p>
-                            <p class="t-blank"></p>
-                            <p class="t-cursor">▋</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h2 class="section-title">Dev le jour,<br>bricoleur la nuit.</h2>
-                    <div class="bio-text">
-                        <p>Je m’appelle Dylan. J’ai découvert le développement en voulant créer mes propres sites — et
-                            j’ai jamais vraiment arrêté depuis. Je suis en 2ème année de BUT MMI à Béziers, et je
-                            passe mon temps à mélanger du code et du design.</p>
-                        <p class="highlight-p">Ce qui m’intéresse, c’est de faire des choses qui fonctionnent et qui
-                            ont l’air bien. Du front, du back, de l’UI, du motion — j’aime toucher à tout plutôt que
-                            rester dans une seule case.</p>
-                        <p>En dehors du dev, je suis fan de coasters (montagnes russes), de gaming, de cinéma, et
-                            j’aime bidouiller des trucs. Ce côté curieux et maker se retrouve dans ma façon de
-                            travailler : j’explore, je teste, je recommence jusqu’à que ça soit bien.</p>
-                        <p>Prochain objectif : un stage en développement web ou en agence créative pour travailler
-                            sur des projets qui ont du sens.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- INDEX -->
+    <section class="archive" id="archive" data-scene="archive">
+      <div class="section-label mono"><span>[04]</span> Index</div>
+      <div class="archive__head">
+        <h2 class="archive__title js-lines">Tous les projets.</h2>
+        <div class="archive__filters" aria-label="Filtrer les projets"></div>
+      </div>
+      <ul class="archive__list"></ul>
+      <div class="archive__preview" aria-hidden="true"></div>
+    </section>
 
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="projects link-trigger">
-            <div class="section-marker">02 // TRAVAUX</div>
+    <!-- LAB -->
+    <section class="lab" id="lab" data-scene="lab">
+      <canvas class="lab__canvas" aria-label="Animation générative interactive"></canvas>
+      <div class="lab__ui">
+        <div class="section-label mono"><span>[05]</span> Lab</div>
+        <h2 class="lab__title">Le code<br />qui dessine.</h2>
+        <p class="lab__text">Un bac à sable : bouge la souris, clique pour lâcher une onde. Une nouvelle graine = une nouvelle idée.</p>
+        <div class="lab__controls">
+          <button type="button" class="btn js-lab-mode" data-cursor="Mode">Mode : <b>Flux</b></button>
+          <button type="button" class="btn btn--ghost js-lab-seed" data-cursor="Seed">Nouvelle graine</button>
+          <span class="lab__seed mono">Idée n°<b class="js-lab-count">001</b></span>
+        </div>
+      </div>
+    </section>
 
-            <!-- PRO -->
-            <div class="projects-category">
-                <div class="category-header">
-                    <span class="category-index">01</span>
-                    <h2 class="category-title">PRO</h2>
-                    <div class="category-line"></div>
-                </div>
-                <div class="projects-grid">
-                    <article class="project-item project-wide tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-easymobility.html'">
-                        <span class="category-badge badge-pro">PRO</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/easymobility/easymobility-home.webp'); background-size: cover; background-position: top center; background-color: #0d1b2a;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">PHP</span>
-                                    <span class="project-tag">Tailwind CSS</span>
-                                    <span class="project-tag">SEO</span>
-                                </div>
-                                <h3>Easy Mobility</h3>
-                                <p class="project-desc">Conception et développement complet du site, stratégie SEO pour un distributeur de solutions de mobilité.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
+    <!-- CONTACT -->
+    <section class="contact" id="contact" data-scene="contact">
+      <div class="section-label mono"><span>[06]</span> Contact</div>
+      <h2 class="contact__title">
+        <span class="line"><span class="js-split">Un projet ?</span></span>
+        <span class="line"><span class="js-split">Parlons-en.</span></span>
+      </h2>
+      <div class="contact__actions">
+        <a class="contact__mail js-mail" href="#" data-magnetic data-cursor="Écrire"></a>
+        <button type="button" class="btn js-copy" data-magnetic>Copier l’email</button>
+        <a class="btn btn--ghost" href="assets/cv.pdf" target="_blank" rel="noopener" data-magnetic>Mon CV (PDF)</a>
+      </div>
+      <div class="contact__grid mono">
+        <div><span class="muted">Ailleurs</span><ul class="js-socials"></ul></div>
+        <div><span class="muted">Heure locale</span><p class="js-clock">--:--:--</p></div>
+        <div><span class="muted">Réponse</span><p>Sous 24 h, souvent moins</p></div>
+      </div>
+      <footer class="footer mono">
+        <span>© 2026 Dylan Belledent</span>
+        <a href="#top">Remonter ↑</a>
+      </footer>
+    </section>
+  </main>
 
-            <!-- SCOLAIRE -->
-            <div class="projects-category">
-                <div class="category-header">
-                    <span class="category-index">02</span>
-                    <h2 class="category-title">SCOLAIRE</h2>
-                    <div class="category-line"></div>
-                </div>
-                <div class="projects-grid">
-                    <article class="project-item project-portrait tilt-hover" data-category="infographie"
-                        onclick="window.location.href='project-food-festival.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/affiche_page-0001.webp'); background-size: cover; background-position: center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Flyer</span>
-                                    <span class="project-tag">Affiche</span>
-                                    <span class="project-tag">Identité</span>
-                                </div>
-                                <h3>Food Festival</h3>
-                                <p class="project-desc">Identité visuelle ludique et vectorielle pour un festival culinaire.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-medium tilt-hover" data-category="video"
-                        onclick="window.location.href='project-motion-design.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <video class="project-img" autoplay muted loop playsinline style="object-fit: cover;">
-                                <source src="assets/motion-design/cv-video.mp4" type="video/mp4">
-                            </video>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Motion Design</span>
-                                    <span class="project-tag">Vidéo</span>
-                                </div>
-                                <h3>CV Vidéo & Motion</h3>
-                                <p class="project-desc">CV vidéo, showreels et expérimentations visuelles sur After Effects.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-centered-poster tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-ar-beziers.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/ar-poster.webp'); background-size: cover; background-position: center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Réalité Augmentée</span>
-                                    <span class="project-tag">Web 3D</span>
-                                    <span class="project-tag">Affiche Interactive</span>
-                                </div>
-                                <h3>WebAR Béziers</h3>
-                                <p class="project-desc">Affiche interactive en Réalité Augmentée pour visualiser des données.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-wide tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-marathon.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/marathon/marathon-home.webp'); background-size: cover; background-position: top center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Site Internet</span>
-                                    <span class="project-tag">WordPress</span>
-                                    <span class="project-tag">Elementor</span>
-                                </div>
-                                <h3>Marathon MMI 2026</h3>
-                                <p class="project-desc">Création d'un site web complet en 4 jours (WordPress & Elementor).</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-wide tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-smiley.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/smiley/smiley-home.webp'); background-size: cover; background-position: top center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Site Internet</span>
-                                    <span class="project-tag">Print</span>
-                                    <span class="project-tag">WordPress</span>
-                                </div>
-                                <h3>Smiley Solution</h3>
-                                <p class="project-desc">Marathon MMI 2025 (1ère année). Site WordPress et Carte de Visite.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-wide tilt-hover" data-category="infographie"
-                        onclick="window.location.href='project-moodtracku.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/moodtracku/moodtracku-home.webp'); background-size: cover; background-position: top center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">UX/UI Design</span>
-                                    <span class="project-tag">Figma</span>
-                                    <span class="project-tag">Prototype</span>
-                                </div>
-                                <h3>MoodTrackU</h3>
-                                <p class="project-desc">Conception d'une application de suivi (Maquette & Prototype).</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-wide tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-summer-adventure.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/summer-adventure/gameplay-1.png'); background-size: cover; background-position: center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Jeu Vidéo</span>
-                                    <span class="project-tag">Phaser JS</span>
-                                    <span class="project-tag">Coop</span>
-                                </div>
-                                <h3>Summer Adventure</h3>
-                                <p class="project-desc">Jeu de plateforme coopératif à deux joueurs développé avec Phaser.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-medium tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-sae203.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/lego/lego-hero.png'); background-size: cover; background-position: center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">PHP / MySQL</span>
-                                    <span class="project-tag">MVC</span>
-                                    <span class="project-tag">Fullstack</span>
-                                </div>
-                                <h3>LEGO Collection</h3>
-                                <p class="project-desc">Plateforme de gestion de collection LEGO avec espace communautaire.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-item project-centered-poster tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-spoti-stats.html'">
-                        <span class="category-badge badge-scolaire">SCOLAIRE</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/spoti-stats/dashboard.png'); background-size: cover; background-position: top center;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">API Spotify</span>
-                                    <span class="project-tag">Data Visualization</span>
-                                    <span class="project-tag">JS</span>
-                                </div>
-                                <h3>Spoti-Stats</h3>
-                                <p class="project-desc">Dashboard de statistiques musicales via l'API Spotify.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- PERSO -->
-            <div class="projects-category">
-                <div class="category-header">
-                    <span class="category-index">03</span>
-                    <h2 class="category-title">PERSO</h2>
-                    <div class="category-line"></div>
-                </div>
-                <p class="category-desc">Pas de contrainte, pas de deadline, pas de brief client. Ces projets existent parce que j'en avais envie — pour tester une techno, explorer une idée ou juste me faire plaisir. C'est souvent là que j'apprends le plus.</p>
-                <div class="projects-grid">
-                    <article class="project-item project-wide tilt-hover" data-category="dev"
-                        onclick="window.location.href='project-kcc.html'">
-                        <span class="category-badge badge-perso">PERSO</span>
-                        <div class="project-img-wrapper">
-                            <div class="project-img"
-                                style="background-image: url('assets/kcc/kcc-home.webp'); background-size: cover; background-position: top center; background-color: #080c14;">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-tags">
-                                    <span class="project-tag">Node.js</span>
-                                    <span class="project-tag">MySQL</span>
-                                    <span class="project-tag">IGDB API</span>
-                                </div>
-                                <h3>KC Catalogue</h3>
-                                <p class="project-desc">Plateforme de gestion de collection de jeux — bibliothèque, reviews, social et mini-jeux.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION: 3 Columns, Aligned -->
-        <section id="skills" class="skills link-trigger">
-            <div class="section-marker">03 // COMPÉTENCES</div>
-
-            <div class="skills-grid-3">
-
-                <!-- Col 1: Dev -->
-                <div class="skill-col">
-                    <div class="skill-header">
-                        <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
-                        <h3>DEV</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>HTML / CSS / JavaScript</li>
-                        <li>PHP / SQL</li>
-                        <li>Tailwind CSS / Bootstrap</li>
-                        <li>WordPress / PrestaShop</li>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                    </ul>
-                </div>
-
-                <!-- Col 2: Art -->
-                <div class="skill-col middle-col">
-                    <div class="skill-header">
-                        <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                            <path d="M2 2l7.586 7.586"></path>
-                            <circle cx="11" cy="11" r="2"></circle>
-                        </svg>
-                        <h3>CRÉATION</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>UI / UX Design</li>
-                        <li>Motion Design</li>
-                        <li>Animation 3D</li>
-                        <li>Montage Vidéo</li>
-                        <li>Adobe Suite</li>
-                        <li>Figma</li>
-                    </ul>
-                </div>
-
-                <!-- Col 3: Soft Skills (Restored) -->
-                <div class="skill-col">
-                    <div class="skill-header">
-                        <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                        </svg>
-                        <h3>HUMAIN</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>Créatif</li>
-                        <li>Capacité d’analyse</li>
-                        <li>Esprit d’équipe</li>
-                        <li>Curieux</li>
-                        <li>Autonome</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- PASSIONS SECTION -->
-        <section id="passions" class="interests">
-            <div class="section-marker">04 // PASSIONS</div>
-
-            <div class="interests-grid">
-                <!-- Dev -->
-                <div class="interest-card tilt-hover">
-                    <svg class="icon-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                    <h4>Dev</h4>
-                </div>
-
-                <!-- Coasters -->
-                <div class="interest-card tilt-hover">
-                    <svg class="icon-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
-                        <path d="M4 21v-8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8"></path>
-                        <path d="M2 13h20"></path>
-                        <path d="M2 21h20"></path>
-                    </svg>
-                    <h4>Coasters</h4>
-                </div>
-
-                <!-- Gaming -->
-                <div class="interest-card tilt-hover">
-                    <svg class="icon-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
-                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                        <path d="M6 12h4m-2-2v4"></path>
-                        <line x1="15" y1="11" x2="15.01" y2="11"></line>
-                        <line x1="18" y1="13" x2="18.01" y2="13"></line>
-                    </svg>
-                    <h4>Gaming</h4>
-                </div>
-
-                <!-- Cinéma -->
-                <div class="interest-card tilt-hover">
-                    <svg class="icon-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
-                        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                        <line x1="7" y1="2" x2="7" y2="22"></line>
-                        <line x1="17" y1="2" x2="17" y2="22"></line>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <line x1="2" y1="7" x2="7" y2="7"></line>
-                        <line x1="2" y1="17" x2="7" y2="17"></line>
-                        <line x1="17" y1="17" x2="22" y2="17"></line>
-                        <line x1="17" y1="7" x2="22" y2="7"></line>
-                    </svg>
-                    <h4>Cinéma</h4>
-                </div>
-
-                <!-- Design -->
-                <div class="interest-card tilt-hover">
-                    <svg class="icon-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M6 12c0-1.7 1.3-3 3-3 1.7 0 3 1.3 3 3 0 1.7-1.3 3-3 3-1.7 0-3-1.3-3-3z"></path>
-                        <path d="M18 12c0-1.7-1.3-3-3-3-1.7 0-3 1.3-3 3 0 1.7 1.3 3 3 3 1.7 0 3-1.3 3-3z"></path>
-                    </svg>
-                    <h4>Design</h4>
-                </div>
-
-                <!-- Maker -->
-                <div class="interest-card tilt-hover">
-                    <svg class="icon-svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.5">
-                        <path
-                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                        </path>
-                    </svg>
-                    <h4>Bricoler / Maker</h4>
-                </div>
-
-            </div>
-        </section>
-
-
-
-        <!-- FOOTER -->
-        <footer id="contact">
-            <div class="footer-content">
-                <h2 class="footer-title">LET'S<br>WORK</h2>
-                <div class="footer-links">
-                    <a href="mailto:dylanbelledent@gmail.com">dylanbelledent@gmail.com</a>
-                    <a href="tel:+33698136701">06 98 13 67 01</a>
-                    <a href="https://www.linkedin.com/in/dylan-belledent-18b35b341/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/dyzlek" target="_blank">GitHub</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2026 Dylan Belledent.</span>
-            </div>
-        </footer>
-
-    </main>
-
-    <script src="js/script.js"></script>
+  <div class="toast mono" role="status" aria-live="polite"></div>
+  <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
