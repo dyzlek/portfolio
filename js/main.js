@@ -1,6 +1,6 @@
 import {
   gsap, ScrollTrigger, SplitText, $, $$, reduceMotion, DEV,
-  initTheme, initLenis, fontsReady, splitChars, revealLines, coverHTML, paintCovers, autoplayVideos, pad,
+  initTheme, initLenis, initMenu, fontsReady, splitChars, revealLines, coverHTML, paintCovers, autoplayVideos, pad,
 } from './common.js';
 import { profile, projects, layers, marquee } from './data.js';
 import { createScene } from './scene.js';
@@ -75,6 +75,7 @@ let scene, lab;
 initTheme(() => { scene?.refreshColors(); lab?.refreshColors(); });
 
 const lenis = initLenis();
+initMenu(lenis);
 let velocity = 0;
 lenis?.on('scroll', (e) => { velocity = e.velocity; });
 lenis?.stop();

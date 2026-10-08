@@ -1,5 +1,5 @@
 import {
-  gsap, $, $$, reduceMotion, initTheme, initLenis, fontsReady, splitChars, revealLines,
+  gsap, $, $$, reduceMotion, initTheme, initLenis, initMenu, fontsReady, splitChars, revealLines,
   coverHTML, paintCovers, autoplayVideos, pad,
 } from './common.js';
 import { projects, profile } from './data.js';
@@ -77,6 +77,7 @@ paintCovers(projects);
 autoplayVideos($('.pj-cover'));
 initTheme();
 const lenis = initLenis();
+initMenu(lenis);
 createCursor(gsap);
 
 /* Lightbox */

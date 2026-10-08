@@ -39,6 +39,32 @@ export function initLenis() {
   return lenis;
 }
 
+/* Menu mobile : les liens de la nav passent en panneau plein écran (< 900 px). */
+export function initMenu(lenis) {
+  const nav = $('.nav'), links = $('.nav__links');
+  if (!nav || !links) return;
+  links.id = 'nav-links';
+  const btn = document.createElement('button');
+  btn.className = 'nav__burger';
+  btn.type = 'button';
+  btn.setAttribute('aria-controls', links.id);
+  btn.innerHTML = '<span></span><span></span>';
+  $('.nav__right').append(btn);
+  const set = (open) => {
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    document.documentElement.classList.toggle('menu-open', open);
+    open ? lenis?.stop() : lenis?.start();
+  };
+  set(false);
+  btn.addEventListener('click', () => set(!nav.classList.contains('is-open')));
+  // capture : on referme (et relance Lenis) avant que le lien ne lance le scroll
+  links.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); }, true);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+  matchMedia('(min-width: 901px)').addEventListener('change', (e) => e.matches && set(false));
+}
+
 /* Les découpages de texte dépendent des métriques : on attend les vraies polices. */
 export async function fontsReady() {
   await Promise.all([
